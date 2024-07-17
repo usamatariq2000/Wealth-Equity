@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+/* body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+
+@font-face {
+  font-family: 'HalyardTextRegular';
+  src: url('/fonts/fonnts.com-Halyard_Micro.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OTJubileeDiamond';
+  src: url('/fonts/OTJubilee-Platinum.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'HalyardTextLight';
+  src: url('/fonts/fonnts.com-Halyard_Micro_Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-halyard {
+  font-family: 'HalyardTextRegular', sans-serif;
+}
+
+.font-jubilee {
+  font-family: 'OTJubileeDiamond', sans-serif;
+}
+
+.font-light-haylard {
+  font-family: 'HalyardTextLight', sans-serif;
+}
+
+.parallelogram {
+  -webkit-transform: skew(-30deg);
+  -moz-transform: skew(-30deg);
+  -o-transform: skew(-30deg);
+  transform: skew(-30deg);
+}
+
+.parallelogram p {
+  -webkit-transform: skew(30deg);
+  -moz-transform: skew(30deg);
+  -o-transform: skew(30deg);
+  transform: skew(30deg);
+}
+
+.parallelogram1 {
+  -webkit-transform: skew(-20deg);
+  -moz-transform: skew(-20deg);
+  -o-transform: skew(-20deg);
+  transform: skew(-20deg);
+}
+
+.parallelogram1 p {
+  -webkit-transform: skew(20deg);
+  -moz-transform: skew(20deg);
+  -o-transform: skew(20deg);
+  transform: skew(20deg);
+}
+
+
+/* body {
+  font-family: 'HalyardTextRegular', sans-serif;
+} */
