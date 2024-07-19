@@ -1,8 +1,8 @@
 // File: /home/dev/Downloads/BlackPower/src/app/lifeInsurance/page.tsx
-import * as entry from '../../../../src/app/lifeInsurance/page.js'
+import * as entry from '../../../../src/app/life-insurance/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
-type TEntry = typeof import('../../../../src/app/lifeInsurance/page.js')
+type TEntry = typeof import('../../../../src/app/life-insurance/page.js')
 
 // Check that the entry is a valid entry
 checkFields<Diff<{
