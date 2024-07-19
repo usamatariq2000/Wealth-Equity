@@ -90,7 +90,7 @@ const Roadmap: React.FC = () => {
               className="flex flex-col border-b border-[#C7C1BD]"
             >
               <button
-                className="text-left text-xl lg:text-2xl py-4 lg:py-5 font-medium font-halyard text-[#00555A]"
+                className="text-left text-xl lg:text-2xl py-4 lg:py-5 font-medium font-halyard hover:text-[#092a2c] text-[#00555A]"
                 onClick={() => handleToggle(item.title)}
               >
                 {item.title}

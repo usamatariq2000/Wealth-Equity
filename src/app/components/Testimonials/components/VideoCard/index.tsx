@@ -24,8 +24,8 @@ const VideoCard: React.FC<VideoCardProps> = ({ story }) => {
           backgroundPosition: 'center',
           borderTopLeftRadius: '200px', // Adjust as needed for the top left
           borderTopRightRadius: '200px', // Adjust as needed for the top right
-          borderBottomLeftRadius: '10px', // Custom radius for bottom left
-          borderBottomRightRadius: '10px', // Custom radius for bottom right
+          borderBottomLeftRadius: '18px', // Custom radius for bottom left
+          borderBottomRightRadius: '18px', // Custom radius for bottom right
           borderBottom: '2px solid #00262B', // Bottom border
         }}
       >

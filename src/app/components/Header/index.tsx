@@ -13,8 +13,12 @@ import {
   FiChevronRight,
 } from "react-icons/fi";
 
+
 const Header = () => {
+
   const router = useRouter();
+
+  
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -45,27 +49,28 @@ const Header = () => {
 };
 
 const DesktopNav = () => (
-  <header className="flex justify-between w-[98%] items-center py-8 px-[80px] md:absolute z-20 mb-20 md:mb-1 ">
+  
+  <header className="flex justify-between w-[98%] items-center py-5 px-[80px] md:absolute z-20 mb-20 md:mb-1 ">
     <div className="flex">
       <Link href="/">
-        <Image src="/images/W&E_Logo.svg" alt="Icon" width={240} height={240} className='pr-[50px] mt-2' />
+        <Image src="/images/W&E_Logo.svg" alt="Icon" width={240} height={240} className='pr-[50px] ' />
       </Link>
       <nav className="flex md:gap-[30px] xl:gap-[51px] font-halyard font-bold">
-        <Link href="/life-insurance"><p className="text-[#00262B] md:text-[10px] xl:text-[16px] hover:text-blue-500">Life Insurance</p></Link>
-        <Link href="/stories"><p className="text-[#00262B] md:text-[10px] xl:text-[16px] hover:text-blue-500">Stories</p></Link>
-        <Link href="/campaigns"><p className="text-[#00262B] md:text-[10px] xl:text-[16px] hover:text-blue-500">Campaigns</p></Link>
-        <Link href="/about-us"><p className="text-[#00262B] md:text-[10px] xl:text-[16px] hover:text-blue-500">About Us</p></Link>
+        <Link href="/life-insurance" ><p className="text-[#00262B] md:text-[10px] xl:text-[16px] hover:text-[#19575f]">Life Insurance</p></Link>
+        <Link href="/stories"><p className="text-[#00262B] md:text-[10px] xl:text-[16px] hover:text-[#19575f]">Stories</p></Link>
+        <Link href="/campaigns"><p className="text-[#00262B] md:text-[10px] xl:text-[16px] hover:text-[#19575f]">Campaigns</p></Link>
+        <Link href="/about-us"><p className="text-[#00262B] md:text-[10px] xl:text-[16px] hover:text-[#19575f]">About Us</p></Link>
       </nav>
     </div>
-    <div className="flex gap-3 font-halyard  mb-20 mt-5">
+    <div className="flex gap-3 font-halyard items-center justify-center mb-20 mt-5">
       <Link href="/sign-in"><p className="px-4 py-2 md:text-[10px] xl:text-[16px] font-medium text-white">Sign In</p></Link>
-      <Link href="/get-started"><p className="px-3 py-3 xl:px-4 xl:py-4 md:text-[10px] xl:text-[16px] bg-[#FCFF7F] text-black xl:rounded-xl md:rounded-lg hover:bg-green-700 font-semibold">Get Started</p></Link>
+      <Link href="/get-started"><p className="px-3 py-3 xl:px-4 xl:py-4 md:text-[10px] xl:text-[16px] bg-[#FCFF7F] text-black xl:rounded-xl md:rounded-lg hover:bg-[#feffc6] font-semibold">Get Started</p></Link>
     </div>
   </header>
 );
 
 const MobileNav = () => (
-  <div className="flex flex-col items-center bg-white p-4 mt-4 shadow-md z-50">
+  <div className="flex flex-col rounded-lg font-halyard  lg:hidden items-center text-[#F9F1EC] transition-opacity bg-[#00262B] p-4 mt-4 shadow-md z-50">
     {NAV_ITEMS.map((navItem) => (
       <Link key={navItem.label} href={navItem.href ?? "#"} className="py-2">
         {navItem.label}

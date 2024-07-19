@@ -88,7 +88,7 @@ const Footer = () => {
           </div>
           <div>
             <text className="text-[white] font-halyard">
-              The $500 Billion Wealth Gap Bridge
+              THE $500 BILLION WEALTH GAP BRIDGE
             </text>{" "}
           </div>
         </div>

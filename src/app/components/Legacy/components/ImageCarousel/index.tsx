@@ -45,7 +45,7 @@ const ImageCarousel = () => {
             alt={testimonials[index].name}
             className=" object-contain" // Fixed height and width, prevent overflow
           />
-          <div className="absolute left-0 w-[80%] md:w-[65%] lg:w-[75%] bottom-8 sm:bottom-10 md:bottom-12 lg:bottom-16 xl:bottom-8 lg:left-[-1rem] right-0 p-4 py-6 pr-3 bg-[#003336] text-white rounded-lg">
+          <div className="absolute left-0 w-[80%] md:w-[65%] lg:w-[75%] bottom-8 sm:bottom-10 md:bottom-2 lg:bottom-16 xl:bottom-32 lg:left-[-1rem] right-0 p-4 py-6 pr-3 bg-[#003336] text-white rounded-lg">
             <p className="text-[15px] mb-4 font-light font-halyard">
               {testimonials[index].text}
             </p>

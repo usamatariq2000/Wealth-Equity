@@ -23,7 +23,7 @@ const Hero = () => {
           Change your financial future and <div className="parallelogram bg-[#FCFF7F] inline-block mr-2"><p className="md:pr-3">family legacy</p></div>
         </h1>
         <p className="text-md lg:text-lg mb-6 font-light-haylard font-bold">{content.description}</p>
-        <button className="px-4 py-3 bg-[#00555A] text-[#F9F1EC] font-bold rounded-lg w-fit hover:bg-[hover:bg-[#00abb3]] mt-5 font-haylard">
+        <button className="px-4 py-3 bg-[#00555A] text-[#F9F1EC] font-halyard font-bold rounded-lg w-fit hover:bg-[hover:bg-[#00abb3]] mt-5 font-haylard">
           {content.button}
         </button>
       </div>

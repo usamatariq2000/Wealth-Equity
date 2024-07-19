@@ -52,16 +52,16 @@ const Consumer: React.FC = () => {
       <div className='flex flex-col h-full lg:flex-row items-end justify-between'>
         <div className='p-4 lg:p-10 flex-1'>
           <div className="w-full flex flex-col justify-center">
-            <p className="text-white uppercase font-halyard font-light tracking-wider leading-14 py-2 tracking-tighter text-left text-xs md:text-[14px] ">
+            <p className="text-[#F9F1EC] uppercase font-halyard font-light tracking-wider leading-14 py-2 tracking-tighter text-left text-xs md:text-[14px] ">
               {content.subheader}
             </p>
-            <h1 className="text-3xl md:text-[56px] font-jubilee text-[white] leading-[40px] lg:leading-[65px] tracking-[5px]" style={{ lineHeight: '65px', letterSpacing: '-1.5px' }} >
-              The typical White family holds about  <div className="parallelogram1 bg-[#FCFF7F] inline-block"><p className="md:mr-2 text-[#00171a]">five to six times</p></div> the wealth of the typical Black or Hispanic family.
+            <h1 className="text-3xl md:text-[56px] font-jubilee text-[#F9F1EC] leading-[40px] lg:leading-[65px] tracking-[5px]" style={{ lineHeight: '65px', letterSpacing: '-1.5px' }} >
+              The typical White family holds about  <div className="parallelogram1 bg-[#FCFF7F] pl-1 inline-block"><p className="md:mr-2 text-[#00171a]">five to six times</p></div> the wealth of the typical Black or Hispanic family.
             </h1>
-            <p className="text-lg mb-6 font-light font-light-haylard text-white mt-3">
+            <p className="text-lg mb-6 font-light font-light-haylard text-[#F9F1EC] mt-3">
               {content.description}
             </p>
-            <button className="px-4 py-3 font-halyard font-bold mt-3 bg-[#FCFF7F] text-[#00262B] rounded-lg w-fit hover:bg-white">
+            <button className="px-4 py-3 font-halyard font-bold mt-3 bg-[#FCFF7F] text-[#00262B] rounded-lg w-fit hover:bg-[#feffb6]">
               {content.button}
             </button>
           </div>
@@ -79,7 +79,7 @@ const Consumer: React.FC = () => {
                 style={{ backgroundColor: stat.bgColor }}
               >
                 <div className='flex items-center justify-center w-full mt-3'>
-                  <p className='font-bold text-[12px] lg:text-base md:text-xl font-halyard' style={{ color: stat.txtColor }}>{stat.value}</p>
+                  <p className='font-bold text-[12px] lg:text-xl md:text-xl font-halyard' style={{ color: stat.txtColor }}>{stat.value}</p>
                 </div>
               </motion.div>
             ))}

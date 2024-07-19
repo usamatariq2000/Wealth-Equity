@@ -16,7 +16,7 @@ const Blog = () => {
 
   const blogs = [
     {
-      category: "Article",
+      category: "ARTICLE",
       title: "Knowledge is power.",
       subitle:
         "For Life: A Starter Guide to Financial Freedom for New Families",
@@ -30,7 +30,7 @@ const Blog = () => {
       },
     },
     {
-      category: "Article",
+      category: "ARTICLE",
       title: "Knowledge is power.",
       subitle:
         "Financial Literacy 101: Tips for Young Black Professionals",
@@ -44,7 +44,7 @@ const Blog = () => {
       },
     },
     {
-      category: "Guide",
+      category: "GUIDE",
       title: "Knowledge is power.",
       subitle:
         "How Personal Wealth Potential Transforms Starting a Family",
@@ -58,7 +58,7 @@ const Blog = () => {
       },
     },
     {
-      category: "Guide",
+      category: "GUIDE",
       title: "Knowledge is power.",
       subitle:
         "Interview: Jamie Logan on Business Succession Planning",

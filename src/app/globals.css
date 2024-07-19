@@ -117,7 +117,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  animation: scrollUp 20s linear infinite;
+  animation: scrollUp 18s linear infinite;
 }
 
 @keyframes scrollUp {
@@ -131,6 +131,6 @@
 }
 
 .marquee-item {
-  padding: 1rem;
+  padding: 1.5rem;
   color: #C7C1BD;
 }
