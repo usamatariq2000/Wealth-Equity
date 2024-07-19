@@ -56,6 +56,18 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'HalyardText';
+  src: url('/fonts/Halyard-Display-Light.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* .font-halyard {
+  font-family: 'HalyardTextRegular', sans-serif;
+} */
+
+
 .font-halyard {
   font-family: 'HalyardTextRegular', sans-serif;
 }
@@ -100,3 +112,25 @@
 /* body {
   font-family: 'HalyardTextRegular', sans-serif;
 } */
+
+.marquee-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: scrollUp 20s linear infinite;
+}
+
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.marquee-item {
+  padding: 1rem;
+  color: #C7C1BD;
+}

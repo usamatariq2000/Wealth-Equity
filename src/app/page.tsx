@@ -21,13 +21,11 @@ export default function Home() {
       <Testimonials />
       <Consumer />
       <Merits />
-      {/* <Testimonials /> */}
       <Blog />
       <Footer />
-      {/* <Stats />
-      
-      <Articles />
-      <Footer /> */}
+
+      {/* <Articles />
+      <Footer />  */}
     </div>
   );
 }

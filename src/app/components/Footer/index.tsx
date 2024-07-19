@@ -56,11 +56,11 @@ const Footer = () => {
   }, [inView]);
 
   return (
-    <div className="bg-[#00555A] p-[80px]">
+    <div className="bg-[#00555A] p-4 md:p-20 ">
       <div className="">
         <text
-          className="text-center text-white font-jubilee text-[42px] lg:text-[88px]"
-          style={{ lineHeight: "88px", letterSpacing: "-2.5%" }}
+          className="text-center text-white font-jubilee text-[42px] lg:text-[88px] leading-[50px] md:leading-[88px]"
+          style={{ letterSpacing: "-2.5%" }}
         >
           Wealth & Equity is on a mission to close the racial wealth gap{" "}
           <span className="text-[#FCFF7F]"> in one generation.</span>
@@ -103,35 +103,37 @@ const Footer = () => {
           />
         </div>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2  gap-[140px] py-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-28 py-10  ">
         <div
-          className="bg-cover bg-center rounded-2xl p-10" 
+          className="bg-cover bg-center rounded-2xl p-10  "
           style={{
-            backgroundImage: `url(images/CTA.png)`,
+            backgroundImage: `url(images/footer.jpeg)`,
             height: "400px",
             width: "100%",
+            objectFit: 'fill',
+            backgroundColor: "rgba(255,255,255,0.1)"
           }}
         >
-          {/* <div className="flex flex-col justify-between h-full p-2">
+          <div className="flex flex-col justify-between h-full w-full p-2">
             <div>
-              <img src="/images/Exclude.png" />
+              <img src="/images/Exclude.png" className="w-20" />
             </div>
-            <div className="flex flex-row justify-between w-full">
-              <p className="text-sm text-[#F9F1EC]">
+            <div className="flex flex-row justify-end text-right w-full">
+              {/* <p className="text-xl text-white font-bold">
                 Join us on a new path to financial<br/> freedom and generational wealth.
-              </p>
-              <button className="p-2 bg-[#FCFF7F] text-[#00262B] text-sm rounded-md">
-                Start Now
+              </p> */}
+              <button className="p-2 bg-[#FCFF7F] text-[#00262B] font-semibold rounded-md w-[230px]">
+                Start Planning Today
               </button>
             </div>
-          </div> */}
+          </div>
         </div>
-        <div className="grid grid-cols-3 gap-10 align-left ">
+        <div className="grid md:grid-cols-3 grid-cols-1 gap-10 align-left ">
           {links.map((link, index) => (
             <div key={index} className="flex flex-col gap-2 py-3">
-              <p className="font-semibold text-xl font-halyard text-[#F9F1EC] mb-5">{link.title}</p>
+              <p className="font-semibold text-xl lg:text-lg font-halyard text-[#F9F1EC] mb-5 whitespace-nowrap">{link.title}</p>
               {link.options.map((option, idx) => (
-                <p key={idx} className=" font-light font-halyard text-[#F9F1EC] text-md mt-1">
+                <p key={idx} className=" font-light font-halyard text-[#F9F1EC] text-sm mt-1">
                   {option}
                 </p>
               ))}
@@ -141,14 +143,13 @@ const Footer = () => {
       </div>
 
       <div className="py-5">
-        
         <div className="py-2 border-t-[1px] border-[#569B9B]"></div>
-        <div className="flex flex-row items-center justify-between">
-          <div className="flex text-[#F9F1EC] font-light">
-            <div className="mr-3">
-              <text>© 2024 Wealth & Equity. All rights reserved.</text>
+        <div className="flex md:flex-row flex-col items-center justify-between gap-2">
+          <div className="flex md:flex-row flex-col text-[#F9F1EC] font-light text-sm">
+            <div className="md:mr-3">
+              <text className="whitespace-nowrap">© 2024 Wealth & Equity. All rights reserved.</text>
             </div>
-            <div className="flex gap-2">
+            <div className="flex md:gap-2 whitespace-nowrap">
               <text>Licenses</text>
               <text>.</text>
               <text>Privacy Policy</text>

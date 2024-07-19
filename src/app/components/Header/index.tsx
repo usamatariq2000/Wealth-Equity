@@ -22,11 +22,11 @@ const Header = () => {
   const handleDropdown = () => setDropdownOpen(!isDropdownOpen);
 
   return (
-    <div className="w-full z-50 px-4">
+    <div className="w-full z-50 px-4 bg-[#F9F1EC]">
       <div className="flex justify-between items-center bg-transparent text-gray-600">
         <div className="flex items-center">
-        <Image src="/images/W&E_Logo.svg" alt="Icon" width={240} height={240} className='pr-[50px] mt-2 block lg:hidden ' />
-          
+          <Image src="/images/W&E_Logo.svg" alt="Icon" width={240} height={240} className='pr-[50px] mt-2 block lg:hidden ' />
+
           <div className=" hidden lg:flex">
             <DesktopNav />
           </div>
@@ -36,7 +36,7 @@ const Header = () => {
             {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
           </button>
 
-        
+
         </div>
       </div>
       {isOpen && <MobileNav />}
@@ -45,27 +45,27 @@ const Header = () => {
 };
 
 const DesktopNav = () => (
-  <header className="flex justify-between w-[98%] items-center py-8 px-[80px] xl:absolute z-20 mb-20 md:mb-1 ">
-            <div className="flex">
-                <Link href="/">
-                    <Image src="/images/W&E_Logo.svg" alt="Icon" width={240} height={240} className='pr-[50px] mt-2' />
-                </Link>
-                <nav className="flex gap-[51px] ml-4 font-halyard font-bold">
-                    <Link href="/life-insurance"><p className="text-[#00262B] hover:text-blue-500">Life Insurance</p></Link>
-                    <Link href="/stories"><p className="text-[#00262B] hover:text-blue-500">Stories</p></Link>
-                    <Link href="/campaigns"><p className="text-[#00262B]  hover:text-blue-500">Campaigns</p></Link>
-                    <Link href="/about-us"><p className="text-[#00262B]  hover:text-blue-500">About Us</p></Link>
-                </nav>
-            </div>
-            <div className="flex gap-3 font-halyard  mb-20  ">
-                <Link href="/sign-in"><p className="px-4 py-2 font-medium text-white">Sign In</p></Link>
-                <Link href="/get-started"><p className="px-4 py-2 bg-[#FCFF7F] text-black rounded-lg hover:bg-green-700 font-semibold">Get Started</p></Link>
-            </div>
-        </header>
+  <header className="flex justify-between w-[98%] items-center py-8 px-[80px] md:absolute z-20 mb-20 md:mb-1 ">
+    <div className="flex">
+      <Link href="/">
+        <Image src="/images/W&E_Logo.svg" alt="Icon" width={240} height={240} className='pr-[50px] mt-2' />
+      </Link>
+      <nav className="flex md:gap-[30px] xl:gap-[51px] font-halyard font-bold">
+        <Link href="/life-insurance"><p className="text-[#00262B] md:text-[10px] xl:text-[16px] hover:text-blue-500">Life Insurance</p></Link>
+        <Link href="/stories"><p className="text-[#00262B] md:text-[10px] xl:text-[16px] hover:text-blue-500">Stories</p></Link>
+        <Link href="/campaigns"><p className="text-[#00262B] md:text-[10px] xl:text-[16px] hover:text-blue-500">Campaigns</p></Link>
+        <Link href="/about-us"><p className="text-[#00262B] md:text-[10px] xl:text-[16px] hover:text-blue-500">About Us</p></Link>
+      </nav>
+    </div>
+    <div className="flex gap-3 font-halyard  mb-20 mt-5">
+      <Link href="/sign-in"><p className="px-4 py-2 md:text-[10px] xl:text-[16px] font-medium text-white">Sign In</p></Link>
+      <Link href="/get-started"><p className="px-3 py-3 xl:px-4 xl:py-4 md:text-[10px] xl:text-[16px] bg-[#FCFF7F] text-black xl:rounded-xl md:rounded-lg hover:bg-green-700 font-semibold">Get Started</p></Link>
+    </div>
+  </header>
 );
 
 const MobileNav = () => (
-  <div className="flex flex-col items-center bg-white p-4 absolute inset-x-0 top-[60px] shadow-md z-50">
+  <div className="flex flex-col items-center bg-white p-4 mt-4 shadow-md z-50">
     {NAV_ITEMS.map((navItem) => (
       <Link key={navItem.label} href={navItem.href ?? "#"} className="py-2">
         {navItem.label}

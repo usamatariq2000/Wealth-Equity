@@ -80,14 +80,14 @@ const Testimonials = () => {
   const settings = {
     slidesToShow: 4, // Show 4 items
     slidesToScroll: 4, // Scroll 4 items at a time
-    arrows:false,
+    arrows: false,
     responsive: [
       {
         breakpoint: 1600,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          
+
         },
       },
       {
@@ -95,7 +95,7 @@ const Testimonials = () => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-         
+
         },
       },
       {
@@ -103,7 +103,7 @@ const Testimonials = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-         
+
         },
       },
       {
@@ -111,7 +111,7 @@ const Testimonials = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          
+
         },
       },
       {
@@ -119,7 +119,7 @@ const Testimonials = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-        
+
         },
       },
       {
@@ -127,7 +127,7 @@ const Testimonials = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          
+
         },
       },
       {
@@ -135,7 +135,7 @@ const Testimonials = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          
+
         },
       },
       {
@@ -164,11 +164,11 @@ const Testimonials = () => {
   };
 
   return (
-    <div className=" mt-20 h-auto mb-10">
+    <div className="mt-[50px] lg:mt-20 h-auto mb-10">
       <div className="w-full flex items-center justify-between px-6 md:px-16">
         <div className="text-left mb-12 text-[#00262B]">
           <p className="text-[16px] mb-3 font-bold font-halyard">Family Stories</p>
-          <h2 className="text-5xl font-jubilee text-[#003336]">
+          <h2 className="text-3xl md:text-5xl font-jubilee text-[#003336]">
             Hear from Wealth & Equity customers
             <br /> about how{" "}
             <div className="parallelogram bg-[#FCFF7F] inline-block mr-2">
@@ -176,22 +176,25 @@ const Testimonials = () => {
             </div>
           </h2>
         </div>
-        <div className="flex items-center gap-4">
-          <button className="bg-[#FCFF7F] p-2 rounded-full" onClick={handlePrev}>
-            <GoArrowLeft size={30} />
+        <div className="flex items-center gap-4 ml-6">
+          <button className="bg-[#FCFF7F] p-2 rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center" onClick={handlePrev}>
+            <GoArrowLeft size={30} className="w-6 h-6 md:w-10 md:h-10" />
           </button>
-          <button className="bg-[#FCFF7F] p-2 rounded-full" onClick={handleNext}>
-            <GoArrowRight size={30} />
+          <button className="bg-[#FCFF7F] p-2 rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center" onClick={handleNext}>
+            <GoArrowRight size={30} className="w-6 h-6 md:w-10 md:h-10" />
           </button>
         </div>
       </div>
 
       <Slider ref={sliderRef} {...settings} >
+
         {stories.map((story, index) => (
-          <div key={index} className="mx-10 flex gap-10 ">
-          <VideoCard story={story} />
-        </div>
+          <div key={index} className="mx-14 flex justify-center items-center">
+            <VideoCard story={story} />
+          </div>
         ))}
+
+
       </Slider>
     </div>
   );

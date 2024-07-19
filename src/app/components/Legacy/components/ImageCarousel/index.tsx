@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const testimonials = [
   {
-    text: "The strategic shift in my insurance provides peace of mind, knowing my financial decisions today are securing a prosperous future for my kids.",
+    text: "“The strategic shift in my insurance provides peace of mind, knowing my financial decisions today are securing a prosperous future for my kids.”",
     name: "Shawn S",
     location: "Atlanta, GA",
     image: "images/Shawn.png",
@@ -38,19 +38,19 @@ const ImageCarousel = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
-          className="lg:absolute inset-0 flex items-center justify-center" // Center the image
+          className="lg:absolute inset-0 flex items-center justify-center"
         >
           <img
             src={testimonials[index].image}
             alt={testimonials[index].name}
             className=" object-contain" // Fixed height and width, prevent overflow
           />
-          <div className="absolute bottom-20 left-0 w-[400px] right-0 p-4 bg-[#003336] text-white rounded-xl">
-            <p className="text-lg mb-4">
+          <div className="absolute left-0 w-[80%] md:w-[65%] lg:w-[75%] bottom-8 sm:bottom-10 md:bottom-12 lg:bottom-16 xl:bottom-8 lg:left-[-1rem] right-0 p-4 py-6 pr-3 bg-[#003336] text-white rounded-lg">
+            <p className="text-[15px] mb-4 font-light font-halyard">
               {testimonials[index].text}
             </p>
             <div className="flex items-center">
-              <img src={testimonials[index].profile} alt={testimonials[index].name} className="w-12 h-12 rounded-full mr-4" />
+              <img src={testimonials[index].profile} alt={testimonials[index].name} className="w-14 h-14 rounded-full mr-4" />
               <div>
                 <p className="font-semibold">{testimonials[index].name}</p>
                 <p className="text-sm">{testimonials[index].location}</p>

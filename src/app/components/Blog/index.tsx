@@ -50,7 +50,7 @@ const Blog = () => {
         "How Personal Wealth Potential Transforms Starting a Family",
       description:
         "We need practical steps to build and maintain generational wealth. From smart investing to effective estate planning, here are a few actionable strategies for your family to get started.",
-      image: "/images/blog2.png",
+      image: "/images/Rectangle 442.svg",
       author: {
         name: "Hasnat Raza",
         designation: "Financial Tutor",
@@ -64,7 +64,7 @@ const Blog = () => {
         "Interview: Jamie Logan on Business Succession Planning",
       description:
         "We need practical steps to build and maintain generational wealth. From smart investing to effective estate planning, here are a few actionable strategies for your family to get started.",
-      image: "/images/blog3.png",
+      image: "/images/Blog.png",
       author: {
         name: "Hasnat Raza",
         designation: "Financial Tutor",
@@ -75,7 +75,7 @@ const Blog = () => {
 
   return (
     <>
-      <div className="m-2 lg:m-10 p-10 rounded-[24px]  lg:h-auto bg-white">
+      <div className="lg:mx-10 mb-10 mx-4 p-10 rounded-[24px] lg:h-auto bg-white">
         <div className="flex flex-col lg:flex-row h-full gap-10 ">
           <div className="p-4 w-full font-halyard">
             <div className="text-[#00262B]">

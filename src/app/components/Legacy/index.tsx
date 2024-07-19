@@ -11,25 +11,25 @@ const Legacy = () => {
     };
 
     return (
-            <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 px-5 lg:px-16 text-[#00262B] mt-[100px] h-screen">
-                <div className="flex flex-col justify-center w-full">
-                    <p className="text-base font-bold leading-14 tracking-tighter text-left font-halyard mt-5 mb-5">
-                        {content.subheader}
-                    </p>
-                    <h1 className="text-[32px] lg:text-[64px]" style={{ fontFamily: 'OTJubileeDiamond', lineHeight: '64px', letterSpacing: '-1.5%' }}>
-                        {content.header}
-                    </h1>
-                    <p className="text-lg mb-6" style={{ fontFamily: 'HalyardTextRegular', lineHeight: '32px', letterSpacing: '-1%' }}>
-                        {content.description}
-                    </p>
-                    <button className="px-4 py-3 bg-[#00555A] text-[#F9F1EC] rounded-lg w-fit font-bold hover:bg-[#00abb3]">
-                        {content.button}
-                    </button>
-                </div>
-                <div className="w-full relative">
-                    <ImageCarousel />
-                </div>
-            </section>
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-[100px] px-4 md:px-16 text-[#00262B] mt-[50px] h-screen">
+            <div className="flex flex-col justify-center w-full">
+                <b className="text-base font-bold leading-14 tracking-tighter tracking-[1px] text-left  font-light-haylard mt-5 mb-5">
+                    {content.subheader}
+                </b>
+                <h1 className="text-[32px] lg:text-[64px] leading-[45px] lg:leading-[64px]" style={{ fontFamily: 'OTJubileeDiamond', letterSpacing: '-1.5%' }}>
+                    {content.header}
+                </h1>
+                <p className="lg:text-lg text-md  mb-6 font-light-haylard mt-5 font-bold" style={{ lineHeight: '32px', letterSpacing: '-1%' }}>
+                    {content.description}
+                </p>
+                <button className="px-4 py-3 bg-[#00555A] text-[#F9F1EC] font-halyard rounded-lg w-fit font-bold hover:bg-[#00abb3] text-sm lg:text-lg">
+                    {content.button}
+                </button>
+            </div>
+            <div className="w-full relative">
+                <ImageCarousel />
+            </div>
+        </section>
     );
 };
 

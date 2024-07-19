@@ -53,9 +53,9 @@ const Roadmap: React.FC = () => {
   };
 
   return (
-    
-    <div className="grid grid-cols-1 lg:grid-cols-2 p-6 lg:p-12 gap-6 mt-[20rem] lg:mt-0 lg:gap-10 h-auto lg:h-screen text-[#00262B]">
-        <div className="p-6 lg:p-10 flex justify-center relative items-center w-full h-full">
+
+    <div className="grid grid-cols-1 lg:grid-cols-2 p-6 lg:p-12 gap-6 mt-[30rem] lg:mt-0 lg:gap-10 h-auto lg:h-screen text-[#00262B] ">
+      <div className="p-6 lg:p-10 hidden md:flex flex justify-center relative items-center w-full h-full">
         <div
           className="flex justify-center items-center w-full h-full "
           style={{
@@ -65,7 +65,7 @@ const Roadmap: React.FC = () => {
           }}
         >
           <div
-            className="absolute  inset-0 rounded-[inherit]"
+            className="absolute  hidden lg:block inset-0 rounded-[inherit]"
             style={{
               backgroundImage: 'url("/images/pyramidbg.jpeg")',
               backgroundSize: "cover",
@@ -78,10 +78,10 @@ const Roadmap: React.FC = () => {
       </div>
       <div className="flex flex-col justify-center gap-8 lg:gap-[32px] p-6 lg:p-10">
         <div className="flex flex-col gap-4 lg:gap-[16px]">
-          <p className="font-medium leading-7 lg:leading-14 tracking-tighter text-left">
+          <p className="font-medium font-halyard leading-7 lg:leading-1 text-left">
             {content.subheader}
           </p>
-          <h1 className="text-3xl lg:text-5xl font-bold">{content.header}</h1>
+          <h1 className="text-3xl lg:text-[60px] lg:tracking-[2px] lg:leading-[60px] leading-[30px] font-jubilee">{content.header}</h1>
         </div>
         <div className="flex flex-col">
           {dropdown.map((item, index) => (
@@ -90,20 +90,19 @@ const Roadmap: React.FC = () => {
               className="flex flex-col border-b border-[#C7C1BD]"
             >
               <button
-                className="text-left text-xl lg:text-2xl py-4 lg:py-5 font-medium text-[#00555A]"
+                className="text-left text-xl lg:text-2xl py-4 lg:py-5 font-medium font-halyard text-[#00555A]"
                 onClick={() => handleToggle(item.title)}
               >
                 {item.title}
               </button>
               <div
-                className={`overflow-hidden text-lg font-base transition-all duration-700 pb-4 ease-in-out ${
-                  isOpen[item.title] ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
-                }`}
+                className={`overflow-hidden font-light-haylard text-lg font-base transition-all duration-700 ease-in-out ${isOpen[item.title] ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
+                  }`}
                 style={{
                   maxHeight: isOpen[item.title] ? "100vh" : "0",
                 }}
               >
-                <div>
+                <div className="mb-5">
                   <p>{item.description}</p>
                 </div>
               </div>
@@ -111,7 +110,7 @@ const Roadmap: React.FC = () => {
           ))}
         </div>
       </div>
-</div>
+    </div>
 
   );
 };
