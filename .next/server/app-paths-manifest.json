@@ -1,4 +1,4 @@
 {
-  "/page": "app/page.js",
-  "/life-insurance/page": "app/life-insurance/page.js"
+  "/calculator/page": "app/calculator/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js"
 }
