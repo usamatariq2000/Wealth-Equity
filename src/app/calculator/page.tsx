@@ -9,10 +9,22 @@ import Step2 from "../components/Calculator/Steps/Step2";
 import Step3 from "../components/Calculator/Steps/Step3";
 import Step4 from "../components/Calculator/Steps/Step4";
 import Step5 from "../components/Calculator/Steps/Step5";
-import { Button, ButtonGroup } from "@nextui-org/button";
 import Step6 from "../components/Calculator/Steps/Step6";
+import Step7 from "../components/Calculator/Steps/Step7";
+import Step8 from "../components/Calculator/Steps/Step8";
+import Step9 from "../components/Calculator/Steps/Step9"; 
+import Step10 from "../components/Calculator/Steps/Step10";
+import Step11 from "../components/Calculator/Steps/Step11";
+import Step12 from "../components/Calculator/Steps/Step12";
+import Step13 from "../components/Calculator/Steps/Step13";
+
 
 export default function LifeInsurance() {
+  interface Child {
+    age: string;
+    schoolType: string;
+  };
+
   interface QuizResponse {
     firstName: string;
     email: string;
@@ -22,11 +34,16 @@ export default function LifeInsurance() {
     percentToProvide:string;
     yearsToProvide:string;
     eliminateDebt:string;
-    // Add more fields as needed
-    step11: string;
+    childcare:string,
+    extendedHealthcare:string,
+    emergencyFund: string,
+    lifeInsurance:string,
+    personalOrEmployer:string,
+    typeOfInsurance:string,
+    children: Child[];
   }
 
-  const [sliderValue, setSliderValue] = useState(10);
+  const [sliderValue, setSliderValue] = useState(8);
   const [step, setStep] = useState(1);
   const [responses, setResponses] = useState<QuizResponse>({
     firstName: "",
@@ -37,11 +54,15 @@ export default function LifeInsurance() {
     percentToProvide:'',
     yearsToProvide:'',
     eliminateDebt:'',
-    // Initialize other steps
-    step11: "",
+    childcare:'',
+    extendedHealthcare:'',
+    emergencyFund:'',
+    lifeInsurance:'',
+    personalOrEmployer:'',
+    typeOfInsurance:'',
+    children: [],
   });
 
-  console.log(responses);
 
   const [ageRange, setAgeRange] = useState<any>({ min: 18, max: 24 });
 
@@ -99,6 +120,21 @@ export default function LifeInsurance() {
       setResponses({ ...responses, gender: gender });
     };
 
+    const handlePersonalOrEmployer = (personalOrEmployer: string) => {
+      setResponses({ ...responses, personalOrEmployer: personalOrEmployer });
+    };
+
+    const handleTypeOfInsurance = (typeOfInsurance: string) => {
+      setResponses({ ...responses, typeOfInsurance: typeOfInsurance });
+    };
+
+    const handleAddChild = (child: Child) => {
+      setResponses({
+        ...responses,
+        children: [...responses.children, child],
+      });
+    };
+
   const renderStep = (step: number) => {
     switch (step) {
       case 1:
@@ -106,32 +142,48 @@ export default function LifeInsurance() {
       case 2:
         return <Step2 handleMinusClick={handleMinusClick} handlePlusClick={handlePlusClick} ageRange={ageRange}/>;
       case 3: 
-        return <Step3 onGenderChange={handleGenderChange} />;
+        return <Step3 onGenderChange={handleGenderChange} data={responses.gender} />;
       case 4:
         return <Step4 answer1={responses.annualIncome} onChange1={handleChange("annualIncome")} answer2={responses.percentToProvide} onChange2={handleChange("percentToProvide")}/>;
       case 5:
         return <Step5 answer={responses.yearsToProvide} onChange={handleChange("yearsToProvide")}/>
       case 6:
         return <Step6 answer={responses.eliminateDebt} onChange={handleChange("eliminateDebt")}/>
-
-
-      
+      case 7:
+        return <Step7 answer={responses.childcare} onChange={handleChange("childcare")}/>
+      case 8:
+        return <Step8 answer={responses.extendedHealthcare} onChange={handleChange("extendedHealthcare")}/>
+      case 9:
+        return <Step9 childrenData={responses.children} onAddChild={handleAddChild} />
+      case 10:
+        return <Step10 answer={responses.emergencyFund} onChange={handleChange("emergencyFund")}/>
       case 11:
-      // Render QuizStep11 similarly
+        return <Step11 answer={responses.lifeInsurance} onChange={handleChange("lifeInsurance")}/>
+      case 12:
+        return <Step12 onTypeChange={handlePersonalOrEmployer} data={responses.personalOrEmployer} />;
+      case 13:
+        return <Step13 onTypeChange={handleTypeOfInsurance} data={responses.typeOfInsurance} />;
+      
       default:
         return null;
     }
   };
 
   const handleButtonClick = () => {
-    if (step < 11) setStep(step + 1);
-    setSliderValue((prev) => (prev < 100 ? prev + 10 : 100)); // Increase slider value by 10% each click
+    if (step < 13){
+      setStep(step + 1);
+      setSliderValue((prev) => (prev <= 100 ? prev + 7.4 : 100));
+    } 
+    
+     // Increase slider value by 10% each click
   };
 
   const handleBackButtonClick = () => {
     if (step > 1) setStep(step - 1);
-    setSliderValue((prev) => (prev > 10 ? prev - 10 : 10)); // Increase slider value by 10% each click
+    setSliderValue((prev) => (prev > 7.4 ? prev - 7.4 : 7.4)); // Increase slider value by 10% each click
   };
+
+  console.log(responses);
 
   return (
     <div>
@@ -157,12 +209,12 @@ export default function LifeInsurance() {
             >
               Back
             </button>
-            {step < 11 ? (
+            {step < 13 ? (
               <button
                 className="px-[34px] py-[12px] rounded-lg bg-[#00555A] text-white ml-2"
                 onClick={handleButtonClick}
               >
-                Start
+                {step === 1?"Start":"Next"}
               </button>
             ) : (
               <button

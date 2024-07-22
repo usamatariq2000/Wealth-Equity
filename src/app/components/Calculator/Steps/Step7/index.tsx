@@ -8,11 +8,11 @@ interface QuizStepProps {
 
 const content = {
   header:
-    "How long do you want to provide an income for your family if you’re no longer there?",
+    "How much do you want to provide for childcare?",
   description:
-    "Consider how long your loved ones would need additional income to support their lifestyle.",
+    "Consider the costs of childcare services in your area and factor how long your family will need those services.",
 };
-const Step5: React.FC<QuizStepProps> = ({ answer, onChange }) => (
+const Step7: React.FC<QuizStepProps> = ({ answer, onChange }) => (
   <div>
     <div className="">
       <h1
@@ -26,19 +26,19 @@ const Step5: React.FC<QuizStepProps> = ({ answer, onChange }) => (
       </p>
     </div>
 
-    <div className="mt-14 w-full ">
+    <div className="mt-14  ">
       <div className="flex items-center justify-center gap-5 ">
+        <p className="text-[40px] font-halyard">$</p>
         <input
           type="number"
-          placeholder="0"
+          placeholder="0.00"
           value={answer}
           onChange={onChange}
-          className="custom-input block text-center w-[15%] px-4 py-2  text-[40px] font-light-haylard font-semibold text-black bg-transparent border-b-3 border-[#E0D9D4] focus:outline-none focus:border-darkgreen"
+          className="custom-input block text-center w-[30%] px-4 py-2  text-[40px] font-light-haylard font-semibold text-black bg-transparent border-b-3 border-[#E0D9D4] focus:outline-none focus:border-darkgreen"
         />
-        <p className="text-[40px] font-halyard">years</p>
       </div>
     </div>
   </div>
 );
 
-export default Step5;
+export default Step7;

@@ -4,6 +4,7 @@ import { Input } from "@nextui-org/react";
 
 interface QuizStepProps {
   onGenderChange: (gender: string) => void;
+  data:any,
 }
 
 const content = {
@@ -35,13 +36,13 @@ export default function Step3(props: QuizStepProps) {
 
       <div className="mt-14 w-full flex justify-center items-center gap-14 text-4xl font-medium text-[#C7C1BD]">
         <button
-          className={`${gender === "Female" ? "bg-[#f2ff73] text-[#004649] px-2" : ""}`}
+          className={`${props.data === "Female" ? "bg-[#f2ff73] text-[#004649] px-2" : ""}`}
           onClick={() => handleGenderClick("Female")}
         >
           Female
         </button>
         <button
-          className={`${gender === "Male" ? "bg-[#f2ff73] text-[#004649] px-2" : ""}`}
+          className={`${props.data  === "Male" ? "bg-[#f2ff73] text-[#004649] px-2" : ""}`}
           onClick={() => handleGenderClick("Male")}
         >
           Male

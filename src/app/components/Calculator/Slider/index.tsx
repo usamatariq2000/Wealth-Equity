@@ -15,7 +15,7 @@ const Slider: React.FC<SliderProps> = ({ sliderValue }) => {
   };
 
   return (
-    <div className="relative mt-4 w-full h-9 px-3 bg-[#E0D9D4]  rounded-full overflow-hidden">
+    <div className="relative mt-4 w-full  h-9 px-3 bg-[#E0D9D4]  rounded-full overflow-hidden">
       <div
         className="absolute  top-1.5 h-2/3  rounded-full transition-all duration-150"
         style={{ width: `${sliderValue}%`, backgroundColor: "#569B9B" }}
