@@ -1,4 +1,3 @@
 {
-  "/calculator/page": "app/calculator/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
+  "/calculator/page": "app/calculator/page.js"
 }

@@ -7,13 +7,21 @@ import Slider from "../components/Calculator/Slider";
 import Step1 from "../components/Calculator/Steps/Step1";
 import Step2 from "../components/Calculator/Steps/Step2";
 import Step3 from "../components/Calculator/Steps/Step3";
+import Step4 from "../components/Calculator/Steps/Step4";
+import Step5 from "../components/Calculator/Steps/Step5";
 import { Button, ButtonGroup } from "@nextui-org/button";
+import Step6 from "../components/Calculator/Steps/Step6";
 
 export default function LifeInsurance() {
   interface QuizResponse {
-    step1: string;
-    step2: string;
-    step3: string;
+    firstName: string;
+    email: string;
+    age: string;
+    gender: string;
+    annualIncome: string;
+    percentToProvide:string;
+    yearsToProvide:string;
+    eliminateDebt:string;
     // Add more fields as needed
     step11: string;
   }
@@ -21,9 +29,14 @@ export default function LifeInsurance() {
   const [sliderValue, setSliderValue] = useState(10);
   const [step, setStep] = useState(1);
   const [responses, setResponses] = useState<QuizResponse>({
-    step1: "",
-    step2: "18-24", // Default value for step2
-    step3: "",
+    firstName: "",
+    email: "",
+    age: "18-24", // Default value for step2
+    gender: "",
+    annualIncome:'',
+    percentToProvide:'',
+    yearsToProvide:'',
+    eliminateDebt:'',
     // Initialize other steps
     step11: "",
   });
@@ -33,10 +46,10 @@ export default function LifeInsurance() {
   const [ageRange, setAgeRange] = useState<any>({ min: 18, max: 24 });
 
   const handleChange =
-    (step: number) => (e: React.ChangeEvent<HTMLInputElement>) => {
+    (step: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
       setResponses({
         ...responses,
-        [`step${step}` as keyof QuizResponse]: e.target.value,
+        [`${step}` as keyof QuizResponse]: e.target.value,
       });
     };
 
@@ -44,19 +57,19 @@ export default function LifeInsurance() {
       if (ageRange.max < 65) {
         if (ageRange.max === 24) {
           setAgeRange({ min: 25, max: 34 });
-          setResponses({...responses, step2: '25-34' });
+          setResponses({...responses, age: '25-34' });
         } else if (ageRange.max === 34) {
           setAgeRange({ min: 35, max: 44 });
-          setResponses({...responses, step2: '35-44' });
+          setResponses({...responses, age: '35-44' });
         } else if (ageRange.max === 44) {
           setAgeRange({ min: 45, max: 54 });
-          setResponses({...responses, step2: '45-54' });
+          setResponses({...responses, age: '45-54' });
         } else if (ageRange.max === 54) {
           setAgeRange({ min: 55, max: 64 });
-          setResponses({...responses, step2: '55-64' });
+          setResponses({...responses, age: '55-64' });
         } else if (ageRange.max === 64) {
           setAgeRange({ min: 65, max: '+' });
-          setResponses({...responses, step2: '65+' });
+          setResponses({...responses, age: '65+' });
         }
       }
     };
@@ -65,31 +78,43 @@ export default function LifeInsurance() {
       if (ageRange.min > 18) {
         if (ageRange.min === 25) {
           setAgeRange({ min: 18, max: 24 });
-          setResponses({...responses, step2: '18-24' });
+          setResponses({...responses, age: '18-24' });
         } else if (ageRange.min === 35) {
           setAgeRange({ min: 25, max: 34 });
-          setResponses({...responses, step2: '25-34' });
+          setResponses({...responses, age: '25-34' });
         } else if (ageRange.min === 45) {
           setAgeRange({ min: 35, max: 44 });
-          setResponses({...responses, step2: '35-44' });
+          setResponses({...responses, age: '35-44' });
         } else if (ageRange.min === 55) {
           setAgeRange({ min: 45, max: 54 });
-          setResponses({...responses, step2: '45-54' });
+          setResponses({...responses, age: '45-54' });
         } else if (ageRange.min === 65) {
           setAgeRange({ min: 55, max: 64 });
-          setResponses({...responses, step2: '55-64' });
+          setResponses({...responses, age: '55-64' });
         }
       }
+    };
+
+    const handleGenderChange = (gender: string) => {
+      setResponses({ ...responses, gender: gender });
     };
 
   const renderStep = (step: number) => {
     switch (step) {
       case 1:
-        return <Step1 answer={responses.step1} onChange={handleChange(1)} />;
+        return <Step1 answer1={responses.firstName} onChange1={handleChange("firstName")} answer2={responses.email} onChange2={handleChange("email")} />;
       case 2:
         return <Step2 handleMinusClick={handleMinusClick} handlePlusClick={handlePlusClick} ageRange={ageRange}/>;
       case 3: 
-        return <Step3 answer={responses.step3} onChange={handleChange(3)}/>;
+        return <Step3 onGenderChange={handleGenderChange} />;
+      case 4:
+        return <Step4 answer1={responses.annualIncome} onChange1={handleChange("annualIncome")} answer2={responses.percentToProvide} onChange2={handleChange("percentToProvide")}/>;
+      case 5:
+        return <Step5 answer={responses.yearsToProvide} onChange={handleChange("yearsToProvide")}/>
+      case 6:
+        return <Step6 answer={responses.eliminateDebt} onChange={handleChange("eliminateDebt")}/>
+
+
       
       case 11:
       // Render QuizStep11 similarly
@@ -124,7 +149,7 @@ export default function LifeInsurance() {
             <button
               className={`px-[34px] py-[12px]  rounded-lg ${
                 step > 1
-                  ? "border border-gray-300"
+                  ? "border border-[#00555A] text-[#00555A]"
                   : "bg-[#C7C1BD] text-[#7D7976]"
               }`}
               onClick={handleBackButtonClick}
