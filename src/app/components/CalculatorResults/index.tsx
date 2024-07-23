@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import SmallPyramid from "./components/small-pyramid";
 import { FaChevronRight } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 import BarChart from "../BarChart";
 
 export const items = [
@@ -16,6 +17,7 @@ export const items = [
 ];
 
 const CalculatorResults = () => {
+  const router = useRouter();
   const [sliderValue, setSliderValue] = useState(0);
   const [animate, setAnimate] = useState(false);
 
@@ -33,6 +35,10 @@ const CalculatorResults = () => {
       return () => clearInterval(interval);
     }
   }, [inView]);
+
+  const handleButtonClick = () => {
+    router.push('/personal-information');
+  };
 
   return (
     <div className="grid lg:grid-cols-2 grid-cols-1 h-screen w-full">
@@ -56,7 +62,7 @@ const CalculatorResults = () => {
             coverage today in case anything happens to you {">>"}
           </p>
           <div className="flex gap-4">
-            <button className="bg-[#FCFF7F] md:px-3 md:py-4 p-2 rounded-lg">
+            <button className="bg-[#FCFF7F] md:px-3 md:py-4 p-2 rounded-lg" onClick={handleButtonClick}>
               <p className="font-halard text-[#00262B] text-base md:text-lg font-medium">
                 Explore quotes
               </p>

@@ -793,9 +793,6 @@ video {
 .top-\[var\(--navbar-height\)\] {
   top: var(--navbar-height);
 }
-.bottom-10 {
-  bottom: 2.5rem;
-}
 .-z-30 {
   z-index: -30;
 }
@@ -2147,10 +2144,6 @@ video {
 .border-primary {
   --tw-border-opacity: 1;
   border-color: hsl(var(--nextui-primary) / var(--nextui-primary-opacity, var(--tw-border-opacity)));
-}
-.border-red-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(239 68 68 / var(--tw-border-opacity));
 }
 .border-secondary {
   --tw-border-opacity: 1;
@@ -8924,6 +8917,10 @@ select {
     font-size: 56px;
   }
 
+  .md\:text-\[60px\] {
+    font-size: 60px;
+  }
+
   .md\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -8939,36 +8936,12 @@ select {
     line-height: 1.75rem;
   }
 
-  .md\:text-\[66px\] {
-    font-size: 66px;
-  }
-
-  .md\:text-\[26px\] {
-    font-size: 26px;
-  }
-
-  .md\:text-\[86px\] {
-    font-size: 86px;
-  }
-
-  .md\:text-\[60px\] {
-    font-size: 60px;
-  }
-
-  .md\:text-\[6px\] {
-    font-size: 6px;
-  }
-
   .md\:leading-\[56px\] {
     line-height: 56px;
   }
 
   .md\:leading-\[88px\] {
     line-height: 88px;
-  }
-
-  .md\:leading-\[66px\] {
-    line-height: 66px;
   }
 }
 

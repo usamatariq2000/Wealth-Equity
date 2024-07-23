@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import {
   FiMenu,
   FiX,
@@ -16,7 +16,6 @@ import {
 
 const Header = () => {
 
-  const router = useRouter();
 
   
   const [isOpen, setIsOpen] = useState(false);
@@ -48,8 +47,13 @@ const Header = () => {
   );
 };
 
-const DesktopNav = () => (
+const DesktopNav = () => {
   
+
+  const pathname = usePathname();
+  const isActive = (path:any) => pathname === path;
+
+  return (
   <header className="flex justify-between w-[98%] items-center py-5 px-[80px] md:absolute z-20 mb-20 md:mb-1 ">
     <div className="flex">
       <Link href="/">
@@ -63,11 +67,11 @@ const DesktopNav = () => (
       </nav>
     </div>
     <div className="flex gap-3 font-halyard items-center justify-center mb-20 mt-5">
-      <Link href="/sign-in"><p className="px-4 py-2 md:text-[10px] xl:text-[16px] font-medium text-white">Sign In</p></Link>
-      <Link href="/get-started"><p className="px-3 py-3 xl:px-4 xl:py-4 md:text-[10px] xl:text-[16px] bg-[#FCFF7F] text-black xl:rounded-xl md:rounded-lg hover:bg-[#feffc6] font-semibold">Get Started</p></Link>
+      <Link href="/sign-in"><p className={`px-4 py-2 md:text-[10px] xl:text-[16px]   ${isActive('/life-insurance')? "text-[#00262B] font-semibold" : "text-white font-medium"}`}>Sign In</p></Link>
+      <Link href="/get-started"><p className="px-3 py-3 xl:px-4 xl:py-4 md:text-[10px] xl:text-[16px] bg-[#FCFF7F] text-[#00262B] xl:rounded-xl md:rounded-lg hover:bg-[#feffc6] font-semibold">Get Started</p></Link>
     </div>
   </header>
-);
+);}
 
 const MobileNav = () => (
   <div className="flex flex-col rounded-lg font-halyard  lg:hidden items-center text-[#F9F1EC] transition-opacity bg-[#00262B] p-4 mt-4 shadow-md z-50">
