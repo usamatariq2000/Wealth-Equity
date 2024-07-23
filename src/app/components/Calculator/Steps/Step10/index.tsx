@@ -21,14 +21,14 @@ const Step10: React.FC<QuizStepProps> = ({ answer, onChange }) => (
       >
         {content.header}
       </h1>
-      <p className="text-md lg:text-[20px] font-[400] mb-6 font-haylard ">
+      <p className="text-md lg:text-[20px] font-[400] mb-6 font-halyard-text ">
         {content.description}
       </p>
     </div>
 
     <div className="mt-14  ">
       <div className="flex items-center justify-center gap-5 ">
-        <p className="text-[40px] font-halyard">$</p>
+        <p className="text-[40px] font-halyard text-[#00555A]">$</p>
         <input
           type="number"
           placeholder="0.00"

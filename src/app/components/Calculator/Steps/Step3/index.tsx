@@ -29,12 +29,12 @@ export default function Step3(props: QuizStepProps) {
         >
           {content.header}
         </h1>
-        <p className="text-md lg:text-[20px] font-[400] mb-6 font-haylard ">
+        <p className="text-md lg:text-[20px] font-light mb-6 font-halyard-text ">
           {content.description}
         </p>
       </div>
 
-      <div className="mt-14 w-full flex justify-center items-center gap-14 text-4xl font-medium text-[#C7C1BD]">
+      <div className="mt-14 w-full flex justify-center items-center gap-14 text-4xl font-bold font-halyard-text text-[#C7C1BD]">
         <button
           className={`${props.data === "Female" ? "bg-[#f2ff73] text-[#004649] px-2" : ""}`}
           onClick={() => handleGenderClick("Female")}

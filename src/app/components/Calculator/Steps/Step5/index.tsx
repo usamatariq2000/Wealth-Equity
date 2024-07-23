@@ -21,7 +21,7 @@ const Step5: React.FC<QuizStepProps> = ({ answer, onChange }) => (
       >
         {content.header}
       </h1>
-      <p className="text-md lg:text-[20px] font-[400] mb-6 font-haylard ">
+      <p className="text-md lg:text-[20px] font-[400] mb-6 font-halyard-text ">
         {content.description}
       </p>
     </div>
@@ -33,9 +33,9 @@ const Step5: React.FC<QuizStepProps> = ({ answer, onChange }) => (
           placeholder="0"
           value={answer}
           onChange={onChange}
-          className="custom-input block text-center w-[15%] px-4 py-2  text-[40px] font-light-haylard font-semibold text-black bg-transparent border-b-3 border-[#E0D9D4] focus:outline-none focus:border-darkgreen"
+          className="custom-input block text-center w-[15%] px-4 py-2  text-[40px] font-halyard-text font-semibold  bg-transparent border-b-3 border-[#E0D9D4] focus:outline-none focus:border-darkgreen"
         />
-        <p className="text-[40px] font-halyard">years</p>
+        <p className="text-[40px] font-halyard text-[#00555A]">years</p>
       </div>
     </div>
   </div>

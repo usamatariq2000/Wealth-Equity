@@ -31,16 +31,16 @@ const Step9: React.FC<QuizStepProps> = ({ childrenData, onAddChild }) => {
   return (
     <div>
       <h1
-        className="text-[45px] lg:text-[40px] font-normal font-jubilee mb-6"
+        className="text-[35px] lg:text-[35px] 2xl:text-[45px] font-normal font-jubilee mb-6"
         style={{ letterSpacing: "-2.5%" }}
       >
         Do you have children who will require educational funding?
       </h1>
-      <p className="text-md lg:text-[20px] font-[400] mb-6 font-haylard">
+      <p className="text-[20px] xl:text-[18px] 2xl:text-[22px] font-[300] mb-6 font-halyard-text">
         Planning for your children's education can make a significant impact.
         Consider tuition costs in the future.
       </p>
-      <div className="mt-10 px-5">
+      <div className="mt-10 xl:mt-5 2xl:mt-10 px-5 font-halyard font-medium">
         {!showInputs && (
           <button
             onClick={handleAddChildClick}
@@ -49,7 +49,7 @@ const Step9: React.FC<QuizStepProps> = ({ childrenData, onAddChild }) => {
             <span className="text-4xl h-14 text-[#00262B] font-light  w-14 flex items-center justify-center bg-[#FCFF7F] rounded-full">
               +
             </span>
-            <span className="ml-2 text-4xl text-[#C7C1BD]">Add a child</span>
+            <span className="ml-2 text-4xl xl:text-2xl 2xl:text-4xl text-[#C7C1BD]">Add a child</span>
           </button>
         )}
         {showInputs && (
@@ -64,7 +64,7 @@ const Step9: React.FC<QuizStepProps> = ({ childrenData, onAddChild }) => {
                 >
                   x
                 </button>
-                <span className="ml-2 text-5xl text-[#00262B]">Child</span>
+                <span className="ml-2 lg:xl xl:2xl 2xl:text-5xl text-[#00262B]">Child</span>
               </div>
               <button
                 onClick={handleSaveChildClick}
@@ -76,7 +76,7 @@ const Step9: React.FC<QuizStepProps> = ({ childrenData, onAddChild }) => {
             <div className="flex flex-col w-full mt-10 space-y-2">
               <div className="flex gap-5 w-full">
                 <div className="w-full">
-                  <p className="text-md font-medium mb-3 font-haylard">
+                  <p className="text-md font-semibold mb-3 font-haylard">
                     What is your child’s age?
                   </p>
                   <input
@@ -88,7 +88,7 @@ const Step9: React.FC<QuizStepProps> = ({ childrenData, onAddChild }) => {
                   />
                 </div>
                 <div className="w-full">
-                  <p className="text-md font-medium mb-3 font-haylard">
+                  <p className="text-md font-semibold mb-3 font-haylard">
                     What type of school will they attend?
                   </p>
                   <select
@@ -108,12 +108,14 @@ const Step9: React.FC<QuizStepProps> = ({ childrenData, onAddChild }) => {
           </div>
         )}
         {!showInputs && (
-          <div className="mt-4 overflow-x-scroll h-[200px] scrollbar-hide">
+          <div className="mt-4 overflow-x-scroll h-[200px] scrollbar-hide px-10">
             {childrenData.map((child, index) => (
-              <div key={index} className="mb-2">
-                <p>Child {index + 1}:</p>
+              <div key={index} className="mb-2 mt-2 bg-[#fcf8f5] w-full rounded-lg py-2 px-4 shadow-lg">
+                <p className="text-2xl font-halyard">Child {index + 1}:</p>
+                <div className="flex gap-5 text-gray-400">
                 <p>Age: {child.age}</p>
                 <p>School Type: {child.schoolType}</p>
+                </div>
               </div>
             ))}
           </div>

@@ -30,7 +30,7 @@ export default function Step12(props: QuizStepProps) {
         </h1>
       </div>
 
-      <div className="mt-14 w-full flex justify-center items-center gap-14 text-4xl font-medium text-[#C7C1BD]">
+      <div className="mt-14 w-full flex justify-center items-center gap-14 text-4xl font-bold font-halyard-text text-[#C7C1BD]">
         <button
           className={`${props.data === "Personal" ? "bg-[#f2ff73] text-[#004649] px-2" : ""}`}
           onClick={() => handleClick("Personal")}

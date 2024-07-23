@@ -42,6 +42,13 @@
 }
 
 @font-face {
+  font-family: 'HalyardTextDisplay';
+  src: url('/fonts/Halyard-Text-Light.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'OTJubileeDiamond';
   src: url('/fonts/OTJubilee-Platinum.otf') format('opentype');
   font-weight: normal;
@@ -70,6 +77,10 @@
 
 .font-halyard {
   font-family: 'HalyardTextRegular', sans-serif;
+}
+
+.font-halyard-text {
+  font-family: 'HalyardTextDisplay', sans-serif;
 }
 
 .font-jubilee {
@@ -108,16 +119,7 @@
   transform: skew(20deg);
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
 
-/* Firefox */
-input[type="number"] {
-  -moz-appearance: textfield;
-}
 
 
 /* body {
@@ -165,4 +167,10 @@ input[type="number"] {
 .marquee-item {
   padding: 1.5rem;
   color: #C7C1BD;
+}
+
+select {
+  /* -webkit-appearance: none;
+  appearance: none; */
+  right: 40;
 }
