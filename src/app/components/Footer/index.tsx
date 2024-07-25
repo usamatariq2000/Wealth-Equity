@@ -103,37 +103,47 @@ const Footer = () => {
           />
         </div>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-28 py-10  ">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-28 md:py-10  ">
         <div
-          className="bg-cover bg-center rounded-2xl p-10  "
+          className="bg-cover bg-center rounded-2xl p-3 md:p-10 relative"
           style={{
             backgroundImage: `url(images/footer.jpeg)`,
             height: "400px",
             width: "100%",
-            objectFit: 'fill',
-            backgroundColor: "rgba(255,255,255,0.1)"
+            objectFit: "fill",
+            backgroundColor: "rgba(255,255,255,0.1)",
           }}
         >
-          <div className="flex flex-col justify-between h-full w-full p-2">
+          <div className="absolute rounded-b-2xl bottom-0 left-0 w-full h-[12rem] bg-gradient-to-t from-black to-transparent opacity-60"></div>
+          <div className="flex flex-col justify-between h-full w-full p-2 relative">
             <div>
               <img src="/images/Exclude.png" className="w-20" />
             </div>
-            <div className="flex flex-row justify-end text-right w-full">
-              {/* <p className="text-xl text-white font-bold">
-                Join us on a new path to financial<br/> freedom and generational wealth.
-              </p> */}
-              <button className="p-2 bg-[#FCFF7F] text-[#00262B] font-semibold rounded-md w-[230px]">
-                Start Planning Today
-              </button>
+            <div className="flex items-center justify-between gap-10 w-full">
+              <p className="text-sm lg:text-md xl:text-xl text-white font-medium ">
+                Join us on a new path to financial freedom and generational
+                wealth.
+              </p>
+              <div>
+                <button className="p-2 bg-[#FCFF7F] text-[#00262B] text-xs lg:text-md xl:text-lg font-semibold rounded-md  lg:w-[180px] xl:w-[230px]">
+                  Start Planning Today
+                </button>
+              </div>
             </div>
           </div>
         </div>
+
         <div className="grid md:grid-cols-3 grid-cols-1 gap-10 align-left ">
           {links.map((link, index) => (
             <div key={index} className="flex flex-col gap-2 py-3">
-              <p className="font-semibold text-xl lg:text-lg font-halyard text-[#F9F1EC] mb-5 whitespace-nowrap">{link.title}</p>
+              <p className="font-semibold text-xl lg:text-lg font-halyard text-[#F9F1EC] mb-5 whitespace-nowrap">
+                {link.title}
+              </p>
               {link.options.map((option, idx) => (
-                <p key={idx} className=" font-light font-halyard text-[#F9F1EC] text-sm mt-1">
+                <p
+                  key={idx}
+                  className=" font-light font-halyard text-[#F9F1EC] text-sm mt-1"
+                >
                   {option}
                 </p>
               ))}
@@ -147,7 +157,9 @@ const Footer = () => {
         <div className="flex md:flex-row flex-col items-center justify-between gap-2">
           <div className="flex md:flex-row flex-col text-[#F9F1EC] font-light text-sm">
             <div className="md:mr-3">
-              <text className="whitespace-nowrap">© 2024 Wealth & Equity. All rights reserved.</text>
+              <text className="whitespace-nowrap">
+                © 2024 Wealth & Equity. All rights reserved.
+              </text>
             </div>
             <div className="flex md:gap-2 whitespace-nowrap">
               <text>Licenses</text>

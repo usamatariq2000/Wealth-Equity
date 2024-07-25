@@ -30,13 +30,8 @@ const PersonalInformation = () => {
             </p>
             <div className="flex items-center gap-2 mt-6">
               <div>
-                <Image
-                  src="/images/Ellipse 11.png"
-                  alt="user image"
-                  width={10}
-                  height={10}
-                  className="rounded-full w-10 h-1-"
-                />
+              <img src={"/images/Ellipse 11.png"} alt={"card 1"} className="w-14 h-14 rounded-full mr-4" />
+
               </div>
               <div className="flex flex-col">
                 <p className="text-[#F9F1EC] text-base">Jeremy P</p>

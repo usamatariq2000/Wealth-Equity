@@ -22,7 +22,7 @@ const Legacy = () => {
                 <p className="lg:text-lg text-md  mb-6 font-light-haylard mt-5 font-bold" style={{ lineHeight: '32px', letterSpacing: '-1%' }}>
                     {content.description}
                 </p>
-                <button className="px-4 py-3 bg-[#00555A] text-[#F9F1EC] font-halyard rounded-lg w-fit font-bold hover:bg-[#00abb3] text-sm lg:text-lg">
+                <button className="px-4 py-3 bg-[#00555A] text-[#F9F1EC] font-halyard rounded-lg w-fit font-bold hover:bg-[#00abb3] text-sm md:text-sm lg:text-md xl:text-lg">
                     {content.button}
                 </button>
             </div>

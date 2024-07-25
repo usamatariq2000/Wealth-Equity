@@ -165,10 +165,10 @@ const Testimonials = () => {
 
   return (
     <div className="mt-[50px] lg:mt-20 h-auto mb-10">
-      <div className="w-full flex items-center justify-between px-6 md:px-16">
+      <div className="w-full md:flex items-center justify-between px-6 md:px-16">
         <div className="text-left mb-12 text-[#00262B]">
           <p className="text-[16px] mb-3 font-bold font-halyard">Family Stories</p>
-          <h2 className="text-3xl md:text-5xl font-jubilee text-[#003336]">
+          <h2 className="text-3xl md:text-5xl font-jubilee text-[#003336] tracking-[0.5px]">
             Hear from Wealth & Equity customers
             <br /> about how{" "}
             <div className="parallelogram bg-[#FCFF7F] inline-block mr-2">
@@ -176,7 +176,7 @@ const Testimonials = () => {
             </div>
           </h2>
         </div>
-        <div className="flex items-center gap-4 ml-6">
+        <div className="flex items-center gap-4 ml-6 mb-10 md:mb-0">
           <button className="bg-[#FCFF7F] p-2 rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center" onClick={handlePrev}>
             <GoArrowLeft size={30} className="w-6 h-6 md:w-10 md:h-10" />
           </button>

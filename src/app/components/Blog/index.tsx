@@ -75,13 +75,13 @@ const Blog = () => {
 
   return (
     <>
-      <div className="lg:mx-10 mb-10 mx-4 p-10 rounded-[24px] lg:h-auto bg-white">
+      <div className="lg:mx-10 mb-10 mx-4 p-5 md:p-10 rounded-[24px] lg:h-auto bg-white">
         <div className="flex flex-col lg:flex-row h-full gap-10 ">
           <div className="p-4 w-full font-halyard">
             <div className="text-[#00262B]">
               <p>Insights & Resources</p>
               <p
-                className="text-[64px] font-jubilee"
+                className="text-[50px] md:text-[64px] font-jubilee mt-4 mb-7"
                 style={{ lineHeight: "64px", letterSpacing: "-1.5%" }}
               >
                 {blogs[0].title}
@@ -96,13 +96,13 @@ const Blog = () => {
               />
               <div>
                 <div className="mt-2 flex">
-                  <p className="py-1 px-2 text-[12px] rounded-sm bg-[#AACDCD]">
+                  <p className="py-1 px-2 text-[12px] rounded-sm mt-5 bg-[#AACDCD]">
                     {blogs[0].category}
                   </p>
                 </div>
               </div>
-              <p className="text-[24px] font-semibold">{blogs[0].subitle}</p>
-              <p className="font-light">{blogs[0].description}</p>
+              <p className="text-[24px] font-semibold mt-2">{blogs[0].subitle}</p>
+              <p className="font-light mt-5">{blogs[0].description}</p>
               <div className="flex items-center">
                 <Image
                   src="/images/Photo.png"

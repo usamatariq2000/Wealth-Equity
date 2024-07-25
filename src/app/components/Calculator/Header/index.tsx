@@ -41,7 +41,7 @@ const DesktopNav = () => {
     <header className="flex justify-between w-[98%] items-center px-[10px] xl:px-[80px] md:absolute z-20 mb-20 md:mb-1">
       <div className="flex items-center">
         <Link href="/">
-          <Image src="/images/W&E_Icon_BLK.png" alt="Icon" width={140} height={140} className="pr-[50px] text-black" />
+          <Image src={`${isActive('/personal-information') || isActive('/calculator-results') ? "/images/W&E_Icon_WHT.png" : "/images/W&E_Icon_BLK.png"}`} alt="Icon" width={140} height={140} className="pr-[50px] text-black" />
         </Link>
         <nav className="flex md:gap-[30px] xl:gap-[51px] font-halyard font-bold">
           <Link href="/life-insurance">

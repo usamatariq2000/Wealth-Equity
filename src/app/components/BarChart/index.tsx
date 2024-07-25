@@ -58,14 +58,24 @@ const BarChart: React.FC = () => {
     scales: {
       x: {
         stacked: true,
+        grid: {
+          display: false,
+        },
+        border: {
+          display: false, // Remove the bottom border
+        },
       },
       y: {
         stacked: true,
         beginAtZero: true,
         ticks: {
-          callback: function (value) {
-            return `$${(value as number) / 1000}K`;
-          },
+          display: false,
+        },
+        grid: {
+          display: false,
+        },
+        border: {
+          display: false, // Remove the left border
         },
       },
     },

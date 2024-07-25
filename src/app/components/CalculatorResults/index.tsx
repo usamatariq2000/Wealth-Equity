@@ -7,13 +7,48 @@ import { useRouter } from "next/navigation";
 import BarChart from "../BarChart";
 
 export const items = [
-  { id: 1, label: "Income Replacement", amount: "$300,000" },
-  { id: 2, label: "Debt Elimination", amount: "$150,000" },
-  { id: 3, label: "Childcare", amount: "$100,000" },
-  { id: 4, label: "Extended Healthcare", amount: "$100,000" },
-  { id: 5, label: "Education Fund", amount: "$300,000" },
-  { id: 6, label: "Emergency Fund", amount: "$150,000" },
-  { id: 7, label: "Final Expenses", amount: "$30,000" },
+  {
+    id: 1,
+    icon: "/images/Vector.svg",
+    label: "Income Replacement",
+    amount: "$300,000",
+  },
+  {
+    id: 2,
+    icon: "/images/Vector (1).svg",
+    label: "Debt Elimination",
+    amount: "$150,000",
+  },
+  {
+    id: 3,
+    icon: "/images/Vector (2).svg",
+    label: "Childcare",
+    amount: "$100,000",
+  },
+  {
+    id: 4,
+    icon: "/images/Vector (3).svg",
+    label: "Extended Healthcare",
+    amount: "$100,000",
+  },
+  {
+    id: 5,
+    icon: "/images/Vector (4).svg",
+    label: "Education Fund",
+    amount: "$300,000",
+  },
+  {
+    id: 6,
+    icon: "/images/Vector (5).svg",
+    label: "Emergency Fund",
+    amount: "$150,000",
+  },
+  {
+    id: 7,
+    icon: "/images/Vector (7).svg",
+    label: "Final Expenses",
+    amount: "$30,000",
+  },
 ];
 
 const CalculatorResults = () => {
@@ -37,17 +72,17 @@ const CalculatorResults = () => {
   }, [inView]);
 
   const handleButtonClick = () => {
-    router.push('/personal-information');
+    router.push("/personal-information");
   };
 
   return (
     <div className="grid lg:grid-cols-2 grid-cols-1 h-screen w-full">
-      <div className="w-full flex items-start justify-center bg-[#00555A] lg:pt-44 py-16">
+      <div className="w-full flex items-start justify-center bg-[#00555A] lg:pt-44 pt-16">
         <div className="w-[80%] flex flex-col gap-2.5 md:gap-4">
-          <p className="text-[#F9F1EC] font-jubilee font-normal text-3xl md:text-5xl">
+          <p className="text-[#F9F1EC] font-jubilee font-normal text-3xl md:text-6xl mb-4">
             Eugene, here’s your Personal Wealth Potential:
           </p>
-          <p className="text-[80px] md:text-[140px] text-[#FCFF7F] font-jubilee">
+          <p className="text-[80px] md:text-[160px] text-[#FCFF7F] font-jubilee leading-none mb-4">
             $1.13M
           </p>
           <p className="text-halyard text-base md:text-xl text-[#F9F1EC]">
@@ -57,12 +92,16 @@ const CalculatorResults = () => {
             <span className="text-[#FCFF7F]">$980K of unprotected wealth </span>
             on the table.
           </p>
-          <p className="text-halyard text-base md:text-xl text-[#F9F1EC]">
+
+          <p className="text-halyard text-base md:text-xl mt-5 text-[#F9F1EC]">
             {"<<"} Please note: you should consider purchasing additional
             coverage today in case anything happens to you {">>"}
           </p>
-          <div className="flex gap-4">
-            <button className="bg-[#FCFF7F] md:px-3 md:py-4 p-2 rounded-lg" onClick={handleButtonClick}>
+          <div className="flex gap-4 mt-3">
+            <button
+              className="bg-[#FCFF7F] md:px-3 md:py-4 p-2 rounded-lg"
+              onClick={handleButtonClick}
+            >
               <p className="font-halard text-[#00262B] text-base md:text-lg font-medium">
                 Explore quotes
               </p>
@@ -104,53 +143,58 @@ const CalculatorResults = () => {
         </div>
       </div>
 
-      <div className="w-full flex justify-center items-start bg-[#F9F1EC] lg:overflow-y-auto lg:pt-44 py-16">
+      <div className="w-full flex justify-center items-start bg-[#F9F1EC] lg:overflow-y-auto scrollbar-hide lg:pt-44 py-16">
         <div className="w-[80%] flex flex-col gap-5">
-          <p className="uppercase text-halyard text-md font-semibold">
+          <p className="uppercase text-[#00262B] font-halyard-text text-[17px] font-bold">
             Recommended Life Avenue
           </p>
-          <div className="flex md:flex-row flex-col bg-[#003336] items-center md:items-start rounded-lg gap-2 p-6">
+          <div className="flex md:flex-row flex-col bg-[#003336] items-center md:items-start rounded-lg gap-1 p-6">
             <div className="w-[30%]">
               <SmallPyramid />
             </div>
             <div className="flex flex-col gap-4 w-[70%] text-[#F9F1EC]">
-              <p className="md:text-5xl text-2xl font-jubliee font-normal">
+              <p className="md:text-6xl text-2xl font-jubilee  font-normal">
                 Protect
               </p>
-              <p className="font-halyard font-light text-xs md:text-base">
+              <p className="font-halyard-text text-sm md:text-[18px] text-[#F9F1EC] font-medium">
                 Build your financial foundations. Cover what you earn, what you
                 own, and what you owe to protect those you love the most.
               </p>
             </div>
           </div>
-          <p className="uppercase text-halyard text-sm font-semibold mt-10">
+          <p className="uppercase text-[#00262B] font-halyard-text text-[17px] mt-7 font-bold">
             Gap Analysis
           </p>
-          <p className="text-halyard text-sm md:text-base font-light">
+          <p className="font-halyard-text text-sm md:text-[17px] text-[#00262B] font-medium">
             Based on your selected financial goals and wealth bridge needs,
             let’s see how you stack up—using group comparisons.
           </p>
-          <p className="font-bold text-5xl">
+          <p className="font-bold text-5xl bg-[#FCF8F5] p-4 rounded-lg">
             <BarChart />
           </p>
 
-          <p className="uppercase text-halyard text-sm font-semibold mt-10">
+          <p className="uppercase text-[#00262B] font-halyard-text text-[17px] mt-7 font-bold">
             Your PwP Breakdown
           </p>
-          <p className="text-halyard text-sm md:text-base font-light">
+          <p className="font-halyard-text text-sm md:text-[17px] text-[#00262B] font-medium">
             You can edit the values you entered below. See how your long-term
             financial roadmap can change based on different adjustments.
           </p>
-          <div className="h-auto">
+          <div className="h-auto mt-5">
             {items.map((item) => (
               <div
                 key={item.id}
-                className="bg-[#FCF8F5] flex rounded-lg p-4 justify-between items-center mb-2"
+                className="bg-[#FCF8F5] flex rounded-lg p-4 px-5 justify-between items-center mb-6 "
               >
-                <div className="flex gap-4">
-                  {/* <FaChevronRight className="text-[#7D7976]" /> */}
-                  <FaChevronRight className="text-[#00555A]" />
-                  <p className="text-sm md:text-base text-[#00555A] font-500 font-halyard">
+                <div className="flex items-center gap-4 ">
+                  <img
+                    src={"/images/Vector (6).svg"}
+                    alt={"chevron"}
+                    className=" w-2 "
+                  />
+                  <img src={item.icon} alt={"card 1"} className="w-7 ml-2" />
+
+                  <p className="text-sm md:text-base text-[#00555A] font-500 font-halyard-text font-bold">
                     {item.label}
                   </p>
                 </div>

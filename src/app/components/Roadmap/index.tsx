@@ -54,8 +54,8 @@ const Roadmap: React.FC = () => {
 
   return (
 
-    <div className="grid grid-cols-1 lg:grid-cols-2 p-6 lg:p-12 gap-6 mt-[30rem] lg:mt-0 lg:gap-10 h-auto lg:h-screen text-[#00262B] ">
-      <div className="p-6 lg:p-10 hidden md:flex flex justify-center relative items-center w-full h-full">
+    <div className="grid grid-cols-1 lg:grid-cols-2 p-3 lg:p-12 gap-6 mt-[20rem] sm:mt-[22rem] md:mt-[20rem] lg:mt-0 lg:gap-10 h-auto lg:h-screen text-[#00262B] ">
+      <div className="p-6 lg:p-10 hidden md:flex flex justify-center relative items-center w-full md:h-full">
         <div
           className="flex justify-center items-center w-full h-full "
           style={{
@@ -81,7 +81,7 @@ const Roadmap: React.FC = () => {
           <p className="font-medium font-halyard leading-7 lg:leading-1 text-left">
             {content.subheader}
           </p>
-          <h1 className="text-3xl lg:text-[60px] lg:tracking-[2px] lg:leading-[60px] leading-[30px] font-jubilee">{content.header}</h1>
+          <h1 className="text-3xl lg:text-[60px] tracking-[2px] lg:tracking-[2px] lg:leading-[60px] leading-[30px] font-jubilee">{content.header}</h1>
         </div>
         <div className="flex flex-col">
           {dropdown.map((item, index) => (
@@ -90,7 +90,7 @@ const Roadmap: React.FC = () => {
               className="flex flex-col border-b border-[#C7C1BD]"
             >
               <button
-                className="text-left text-xl lg:text-2xl py-4 lg:py-5 font-medium font-halyard hover:text-[#092a2c] text-[#00555A]"
+                className="text-left text-xl lg:text-2xl py-4 lg:py-5 font-bold font-light-haylard hover:text-[#092a2c] text-[#00555A]"
                 onClick={() => handleToggle(item.title)}
               >
                 {item.title}

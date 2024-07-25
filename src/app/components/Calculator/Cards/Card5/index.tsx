@@ -1,19 +1,17 @@
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
 
-const Card1: React.FC<any> = () => {
+const Card5: React.FC<any> = () => {
   const content = {
-    name: "Pamela N, 38",
-    title: "Wealth & Equity customer",
-    description:
-    "I realized that getting life insurance for myself, my mom, and my child will create endless opportunities and change our family story forever",
+    name: "Leanne K",
+    title: "Wealth & Equity Advisor",
   };
 
   return (
     <div className="relative w-full h-screen">
       <div className="relative hidden lg:block w-full h-screen shadow-overlay">
         <Image
-          src="/images/Family.jpg"
+          src="/images/cardImage5.png"
           alt="HeroImg"
           layout="fill"
           objectFit="cover"
@@ -22,10 +20,12 @@ const Card1: React.FC<any> = () => {
       </div>
       <div className="absolute inset-0 flex items-end mb-20 justify-center">
         <div className="w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl p-4 sm:p-6 lg:p-8 bg-[#003336] text-white rounded-xl">
-          <p className="text-sm sm:text-base lg:text-lg font-halyard-text xl:text-xl mb-4">
-            "{content.description}"
+        <p className="text-sm sm:text-base lg:text-lg font-halyard-text xl:text-lg tracking-[1px] font-bold mb-4">
+          “Think about the length of time your income will be needed <span className="text-[#FCFF7F] inline-block">to support your family and obligations.</span> If you have kids, then that might be when your youngest child finishes college (or longer!).”
           </p>
           <div className="flex items-center">
+          <img src={"/images/Ellipse 11.png"} alt={"card 1"} className="w-14 h-14 rounded-full mr-4" />
+
             <div>
               <p className="font-semibold text-sm sm:text-base lg:text-lg">
                 {content.name}
@@ -41,4 +41,4 @@ const Card1: React.FC<any> = () => {
   );
 };
 
-export default Card1;
+export default Card5;

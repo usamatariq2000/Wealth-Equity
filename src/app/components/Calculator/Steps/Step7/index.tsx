@@ -21,7 +21,7 @@ const Step7: React.FC<QuizStepProps> = ({ answer, onChange }) => (
       >
         {content.header}
       </h1>
-      <p className="text-md lg:text-[20px] font-[400] mb-6 font-halyard-text ">
+      <p className="text-[20px] text-[#00262B] lg:text-[20px] xl:text-[20px] font-[400] mb-6 font-light-halyard ">
         {content.description}
       </p>
     </div>

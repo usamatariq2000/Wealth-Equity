@@ -55,7 +55,7 @@ const Consumer: React.FC = () => {
             <p className="text-[#F9F1EC] uppercase font-halyard font-light tracking-wider leading-14 py-2 tracking-tighter text-left text-xs md:text-[14px] ">
               {content.subheader}
             </p>
-            <h1 className="text-3xl md:text-[56px] font-jubilee text-[#F9F1EC] leading-[40px] lg:leading-[65px] tracking-[5px]" style={{ lineHeight: '65px', letterSpacing: '-1.5px' }} >
+            <h1 className="text-3xl md:text-[56px] font-jubilee text-[#F9F1EC] leading-[40px] lg:leading-[65px] tracking-normal" style={{ letterSpacing: '0.2px' }} >
               The typical White family holds about  <div className="parallelogram1 bg-[#FCFF7F] pl-1 inline-block"><p className="md:mr-2 text-[#00171a]">five to six times</p></div> the wealth of the typical Black or Hispanic family.
             </h1>
             <p className="text-lg mb-6 font-light font-light-haylard text-[#F9F1EC] mt-3">

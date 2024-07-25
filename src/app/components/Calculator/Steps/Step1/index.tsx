@@ -19,13 +19,13 @@ const Step1: React.FC<QuizStepProps> = ({ answer1, onChange1, answer2, onChange2
     <div className="">
       
       <h1
-        className="text-[35px] lg:text-[40px] xl:text-[45px] font-normal font-jubilee mb-6"
+        className="text-[35px] text-[#00262B] lg:text-[40px] xl:text-[45px] font-normal font-jubilee mb-6"
         style={{ letterSpacing: "-2.5%" }}
       >
         {content.header}
         
       </h1>
-      <p className="text-[20px] lg:text-[20px] xl:text-[22px] font-[500] mb-6 font-halyard-text ">
+      <p className="text-[20px] text-[#00262B] lg:text-[20px] xl:text-[20px] font-[400] mb-6 font-light-halyard ">
         {content.description}
       </p>
     </div>

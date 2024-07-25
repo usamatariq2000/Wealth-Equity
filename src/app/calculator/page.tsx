@@ -18,6 +18,19 @@ import Step11 from "../components/Calculator/Steps/Step11";
 import Step12 from "../components/Calculator/Steps/Step12";
 import Step13 from "../components/Calculator/Steps/Step13";
 import Card1 from "../components/Calculator/Cards/Card1";
+import Card2 from "../components/Calculator/Cards/Card2";
+import Card3 from "../components/Calculator/Cards/Card3";
+import Card4 from "../components/Calculator/Cards/Card4";
+import Card5 from "../components/Calculator/Cards/Card5";
+import Card6 from "../components/Calculator/Cards/Card6";
+import Card7 from "../components/Calculator/Cards/Card7";
+import Card8 from "../components/Calculator/Cards/Card8";
+import Card9 from "../components/Calculator/Cards/Card9";
+import Card10 from "../components/Calculator/Cards/Card10";
+import Card11 from "../components/Calculator/Cards/Card11";
+import Card12 from "../components/Calculator/Cards/Card12";
+import Card13 from "../components/Calculator/Cards/Card13";
+
 import LoaderHeader from "../components/Calculator/LoaderHeader";
 import { useRouter } from "next/navigation";
 
@@ -248,51 +261,51 @@ export default function LifeInsurance() {
         );
       case 2:
         return (
-          <Card1/>
+          <Card2/>
         );
       case 3:
         return (
-          <Card1/>
+          <Card3/>
         );
       case 4:
         return (
-          <Card1/>
+          <Card4/>
         );
       case 5:
         return (
-          <Card1/>
+          <Card5/>
         );
       case 6:
         return (
-          <Card1/>
+          <Card6/>
         );
       case 7:
         return (
-          <Card1/>
+          <Card7/>
         );
       case 8:
         return (
-          <Card1/>
+          <Card8/>
         );
       case 9:
         return (
-          <Card1/>
+          <Card9/>
         );
       case 10:
         return (
-          <Card1/>
+          <Card10/>
         );
       case 11:
         return (
-          <Card1/>
+          <Card11/>
         );
       case 12:
         return (
-          <Card1/>
+          <Card12/>
         );
       case 13:
         return (
-          <Card1/>
+          <Card13/>
         );
 
       default:

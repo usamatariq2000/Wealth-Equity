@@ -3,10 +3,10 @@ import React from "react";
 const PersonalInformationForm = () => {
   return (
     <div className="flex flex-col gap-6">
-      <p className="uppercase text-[#00262B] text-sm font-medium font-halyard">
+      <p className="uppercase text-[#00262B] text-lg font-medium font-light-halyard">
         Personal Information
       </p>
-      <div className="bg-[#C7C1BD] h-[1px]"></div>
+      <div className="bg-[#C7C1BD] h-[1px] mt-[-10px]"></div>
       <div className="flex md:flex-row flex-col w-full gap-4 md:gap-6">
         <div className="flex w-full flex-col gap-2 ">
           <label className="text-sm font-halyard">First Name</label>
@@ -15,7 +15,7 @@ const PersonalInformationForm = () => {
             placeholder="Enter your first name"
             className="px-4 py-3 w-full font-halyard border text-sm bg-[#fcf8f5] border-[#e0d9d4] rounded-lg focus:outline-none focus:border-[#7d7976]"
           />
-        </div>
+        </div>10px
         <div className="flex w-full flex-col gap-2 ">
           <label className="text-sm font-halyard">Last Name</label>
           <input
@@ -85,10 +85,10 @@ const PersonalInformationForm = () => {
         </div>
       </div>
 
-      <p className="uppercase text-[#00262B] text-sm font-medium font-halyard">
+      <p className="uppercase text-[#00262B] text-lg font-medium font-light-halyard mt-5">
         Health & Lifestyle
       </p>
-      <div className="bg-[#C7C1BD] h-[1px]"></div>
+      <div className="bg-[#C7C1BD] h-[1px] mt-[-10px]"></div>
       <div className="flex w-full gap-6">
         <div className="flex w-full flex-col gap-2 ">
           <label className="text-sm font-halyard">Height (ft)</label>
@@ -107,7 +107,7 @@ const PersonalInformationForm = () => {
           />
         </div>
       </div>
-      <div className="flex w-full flex-col gap-2">
+      <div className="flex w-full flex-col gap-2 mt-4">
         <label className="text-sm font-halyard text-[#00262B] font-medium">
           Have you had 3 or more driving violations in the last 3 years?
         </label>
@@ -122,7 +122,7 @@ const PersonalInformationForm = () => {
           </label>
         </div>
       </div>
-      <div className="flex w-full flex-col gap-2">
+      <div className="flex w-full flex-col gap-2 mt-2">
         <label className="text-sm font-halyard text-[#00262B] font-medium">
           Have you used any nicotine or tobacco products in the last 3 years?
         </label>
@@ -137,7 +137,7 @@ const PersonalInformationForm = () => {
           </label>
         </div>
       </div>
-      <div className="flex w-full flex-col gap-2">
+      <div className="flex w-full flex-col gap-2 mt-2">
         <label className="text-sm font-halyard text-[#00262B] font-medium">
           Have you or a biological parent or sibling been diagnosed with cancer
           or heart disease before the age of 60?
@@ -153,7 +153,7 @@ const PersonalInformationForm = () => {
           </label>
         </div>
       </div>
-      <div className="flex w-full flex-col gap-2">
+      <div className="flex w-full flex-col gap-2 mt-2">
         <label className="text-sm font-halyard text-[#00262B] font-medium">
           Have you or a biological parent or sibling been diagnosed with
           diabetes or has had a stroke before the age of 60?
@@ -168,6 +168,15 @@ const PersonalInformationForm = () => {
             No
           </label>
         </div>
+      </div>
+      <div className="w-full flex justify-center ">
+        <button
+          className="bg-[#FCFF7F] md:px-8 md:py-3 p-2 rounded-xl "
+        >
+          <p className="font-halard text-[#00262B] text-base md:text-lg font-medium">
+            Submit Now
+          </p>
+        </button>
       </div>
     </div>
   );

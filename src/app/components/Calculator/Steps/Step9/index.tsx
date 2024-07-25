@@ -36,7 +36,7 @@ const Step9: React.FC<QuizStepProps> = ({ childrenData, onAddChild }) => {
       >
         Do you have children who will require educational funding?
       </h1>
-      <p className="text-[20px] xl:text-[18px] 2xl:text-[22px] font-[300] mb-6 font-halyard-text">
+      <p className="text-[20px] text-[#00262B] lg:text-[20px] xl:text-[20px] font-[400] mb-6 font-light-halyard ">
         Planning for your children's education can make a significant impact.
         Consider tuition costs in the future.
       </p>

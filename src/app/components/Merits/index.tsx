@@ -25,44 +25,44 @@ const Merits: React.FC = () => {
   return (
     <div className="flex flex-col lg:flex-row lg:justify-between items-center px-2 lg:px-10  lg:mt-0  md:h-[85rem] lg:h-[100vh]">
       <div className="w-full mx-8 flex justify-center items-center ">
-        <div className="bg-[#FDFFBF] text-[#00262B] my-12 mobile:aspect-square md:aspect-square rounded-full flex flex-col items-center justify-center text-center p-12 lg:p-6 w-full flex-wrap"
+        <div className="bg-[#FDFFBF] text-[#00262B] mt-12 md:my-12 aspect-square md:aspect-square rounded-full flex flex-col items-center justify-center text-center p-12 lg:p-6  flex-wrap"
         >
-          <p className="flex flex-wrap items-center justify-center text-[14px] lg:text-xs xl:text-lg lg:mb-4 font-halyard px-6">
+          <p className="flex flex-wrap items-center justify-center text-[12px] lg:text-xs xl:text-[16px] lg:mb-4 font-halyard px-6 md:px-12">
             <span className='font-bold'>OUR SOLUTION: </span>THE $500 BILLION WEALTH GAP BRIDGE
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 lg:gap-4 xl:gap-10 lg:mb-4">
+          <div className="flex flex-wrap items-center justify-center gap-0 md:gap-8 lg:gap-1 xl:gap-4 lg:mb-4">
             <div className="text-center">
               <p
-                className="md:text-4xl lg:text-3xl xl:text-[56px] leading-6 lg:leading-2 xl:leading-10 2xl:leading-[56px] font-jubilee"
+                className="text-[14px] md:text-4xl lg:text-3xl xl:text-[46px] leading-6 lg:leading-2 xl:leading-10 2xl:leading-[56px] font-jubilee"
                 style={{ letterSpacing: "-1.5%" }}
               >
                 1M
               </p>
-              <p className='font-medium'>Families</p>
+              <p className='text-[14px] md:text-base font-medium'>Families</p>
             </div>
-            <div className="md:text-4xl lg:text-[25px] xl:text-[56px] font-bold mx-2">x</div>
+            <div className="md:text-4xl lg:text-[25px] xl:text-[40px] font-bold mx-2">x</div>
             <div className="text-center">
               <p
-                className="md:text-4xl lg:text-3xl xl:text-[56px] leading-6 lg:leading-2 xl:leading-10 2xl:leading-[56px] font-jubilee"
+                className=" text-[14px] md:text-4xl lg:text-3xl xl:text-[46px] leading-6 lg:leading-2 xl:leading-10 2xl:leading-[56px] font-jubilee"
                 style={{ letterSpacing: "-1.5%" }}
               >
                 $500K
               </p>
-              <p className='font-medium'>Life Insurance</p>
+              <p className='text-[14px] md:text-base font-medium'>Life Insurance</p>
             </div>
-            <div className="md:text-4xl lg:text-3xl xl:text-[56px] font-bold mx-2">=</div>
+            <div className="md:text-4xl lg:text-3xl xl:text-[40px] font-bold mx-2">=</div>
             <div className="text-center">
               <p
-                className="md:text-4xl lg:text-3xl xl:text-[56px] leading-6 lg:leading-2 xl:leading-10 2xl:leading-[56px] font-jubilee"
+                className="text-[14px] md:text-4xl lg:text-3xl xl:text-[46px] leading-6 lg:leading-2 xl:leading-10 2xl:leading-[56px] font-jubilee"
                 style={{ letterSpacing: "-1.5%" }}
               >
                 $500B
               </p>
-              <p className='font-medium'>Future Income</p>
+              <p className='text-[14px] md:text-base font-medium'>Future Income</p>
             </div>
           </div>
           <p
-            className="md:text-4xl lg:text-xl xl:text-[56px] font-jubilee leading-6 lg:leading-10 xl:leading-[56px] lg:px-6 px-2"
+            className="text-[20px] md:text-4xl lg:text-[4xl] xl:text-[52px] font-jubilee mt-4 leading-6 lg:leading-10 xl:leading-[56px] lg:px-6 px-2"
             style={{ letterSpacing: "-1.5%" }}
           >
             Think what we could do with $500B of tax-free, transferrable
