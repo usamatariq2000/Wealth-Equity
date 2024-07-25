@@ -1,18 +1,16 @@
 import Header from "../components/Header";
 import Hero from "../components/PersonalWealthPotential/Hero";
 import UnlockPotential from "../components/PersonalWealthPotential/UnlockPotential";
-import PersonalizedInsurancePlan from "../components/LifeInsurance/PersonalizedInsurancePlan";
-import FrequentlyAskQuestions from "../components/LifeInsurance/FrequentlyAskQuestions";
 import Footer from "../components/Footer";
+import PwpFacors from "../components/PersonalWealthPotential/PwpFactors";
 export default function LifeInsurance() {
   return (
     <div>
-        <Header/>
-        <Hero/>
-        <UnlockPotential/>       
-        <PersonalizedInsurancePlan/>
-        <FrequentlyAskQuestions/>
-        <Footer/>
+      <Header />
+      <Hero />
+      <UnlockPotential />
+      <PwpFacors />
+      <Footer />
     </div>
   );
 }
