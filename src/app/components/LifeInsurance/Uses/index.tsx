@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Uses = () => {
     return (
-        <section className="bg-[#00555A] py-10 px-5 lg:px-20 w-full h-auto text-white font-jubilee xl:mt-0 xxs:mt-10 ">
+        <section className="bg-[#00555A] py-10 px-5 lg:px-20 w-full h-auto text-white font-jubilee xl:mt-0 md:mt-10 lg:mt-0 xxs:mt-10 ">
             <div className=" text-left  w-full" >
                 <h1 className='text-[#FFFFFF] text-[36px] font-normal font-jubilee'>Here are uses to life insurance that most don’t realize, or have not been taught:</h1>
                 <div className=" sm:grid sm:grid-cols-3  gap-x-10  " >
@@ -29,8 +29,8 @@ const Uses = () => {
                                 height={10}
                                 />
                          </div>
-                        <p className='text-[#E7F5F5] text-[28px] font-semibold mt-7 font-light-haylard'>Protect your loved ones</p>
-                        <p className='mt-5 sm:items-start text-[18px] sm:w-full xxs:items-center font-light-haylard  xxs:w-[75%]'>In the event of your passing, your family will receive a tax-free payout to replace your income and help with their financial needs.</p>
+                        <p className='text-[#E7F5F5] text-[28px] font-semibold mt-7 font-light-haylard'>Leverage the living benefits</p>
+                        <p className='mt-5 sm:items-start text-[18px] sm:w-full xxs:items-center font-light-haylard  xxs:w-[75%]'>Access your policy if you become critically, chronically, or terminally ill, and you need money. You can also borrow from the cash value build up.</p>
                     </div>
 
                     <div className=" sm:flex sm:flex-col w-full   mt-8 sm:justify-start sm:items-start  xxs:flex xxs:flex-col   xxs:justify-center xxs:items-center ">
@@ -42,8 +42,8 @@ const Uses = () => {
                                 height={10}
                                 />
                          </div>
-                        <p className='text-[#E7F5F5] text-[28px] font-semibold mt-7 font-light-haylard'>Protect your loved ones</p>
-                        <p className='mt-5 sm:items-start text-[18px] sm:w-full xxs:items-center font-light-haylard  xxs:w-[75%]'>In the event of your passing, your family will receive a tax-free payout to replace your income and help with their financial needs.</p>
+                        <p className='text-[#E7F5F5] text-[28px] font-semibold mt-7 font-light-haylard'>Leave something of significance</p>
+                        <p className='mt-5 sm:items-start text-[18px] sm:w-full xxs:items-center font-light-haylard  xxs:w-[75%]'>You can catapult your family’s financial future forward with inheritance, and support charities, nonprofits, and organizations that you care about.</p>
                     </div>
                 </div>
 

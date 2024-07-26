@@ -31,7 +31,7 @@ const Step4: React.FC<QuizStepProps> = ({ answer1, onChange1, answer2, onChange2
     <div className="mt-14 space-y-[24px] text-[#00262B]">
       <div className="flex items-center justify-between ">
         <p className="w-[30%] text-[18px] text-[#00262B] font-halyard-text font-[600]">
-        YOUR CURRENT ANNUAL INCOME
+        YOUR CURRENT<br/> ANNUAL INCOME
         </p>{" "}
         <div className="flex items-center gap-5 w-[60%] justify-end">
           <p className="text-[40px] text-[#00555A]">$</p>

@@ -38,22 +38,22 @@ const ImageCarousel = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
-          className="lg:absolute inset-0 flex items-center justify-center" // Center the image
+          className="lg:absolute inset-0 flex items-center justify-center"
         >
           <img
             src={testimonials[index].image}
             alt={testimonials[index].name}
-            className=" lg:!w-full md:w-[400px] xxs:w-[350px]" // Fixed height and width, prevent overflow
+            className=" object-contain" // Fixed height and width, prevent overflow
           />
-          <div className="absolute lg:bottom-[-60px] md:bottom-1 xxs:bottom-[-20px] lg:left-[-120px] md:left-20 sm:left-20 xxs:left-[-10px]  xl:w-[450px] lg:w-[350px] md:w-[350px]  xxs:w-[300px]  right-0 p-4 py-6 pr-3 bg-[#003336] text-white rounded-lg">
-            <p className="lg:text-[15px] md:text-[12px] xxs:text-[10px] mb-4 font-light font-halyard">
+          <div className="absolute left-0 w-[80%] md:w-[65%] lg:w-[75%] bottom-[-40px] sm:bottom-1 md:bottom-2 lg:bottom-16 xl:bottom-32 lg:left-[-1rem] right-0 p-4 py-6 pr-3 bg-[#003336] text-white rounded-lg">
+            <p className="text-[12px] sm:text-[14px] md:text-[18px]  mb-4 font-light font-halyard">
               {testimonials[index].text}
             </p>
             <div className="flex items-center">
-              <img src={testimonials[index].profile} alt={testimonials[index].name} className="lg:w-14 lg:h-14 xxs:w-10 xxs:h-10 rounded-full mr-4" />
+              <img src={testimonials[index].profile} alt={testimonials[index].name} className="w-14 h-14 rounded-full mr-4" />
               <div>
-                <p className="font-semibold lg:text-[15px] md:text-[12px] xxs:text-[10px]">{testimonials[index].name}</p>
-                <p className="text-sm lg:text-[15px] md:text-[12px] xxs:text-[10px]">{testimonials[index].location}</p>
+                <p className="font-semibold">{testimonials[index].name}</p>
+                <p className="text-sm">{testimonials[index].location}</p>
               </div>
               <button
                 onClick={handleNext}

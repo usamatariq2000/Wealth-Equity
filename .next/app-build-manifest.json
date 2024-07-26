@@ -1,114 +1,36 @@
 {
   "pages": {
-    "/_not-found/page": [
-      "static/chunks/webpack-5f990fe08806f029.js",
-      "static/chunks/fd9d1056-844a5cc198651369.js",
-      "static/chunks/23-131937bdce8245d9.js",
-      "static/chunks/main-app-c8e44eba5c95730b.js",
-      "static/chunks/app/_not-found/page-7f6a09f2e4056156.js"
+    "/personal-information/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/personal-information/page.js"
     ],
     "/layout": [
-      "static/chunks/webpack-5f990fe08806f029.js",
-      "static/chunks/fd9d1056-844a5cc198651369.js",
-      "static/chunks/23-131937bdce8245d9.js",
-      "static/chunks/main-app-c8e44eba5c95730b.js",
-      "static/css/bb76beb5603055b0.css",
-      "static/css/69c2a3750c331e7a.css",
-      "static/chunks/app/layout-684d4a2787d0085c.js"
-    ],
-    "/calculator-results/page": [
-      "static/chunks/webpack-5f990fe08806f029.js",
-      "static/chunks/fd9d1056-844a5cc198651369.js",
-      "static/chunks/23-131937bdce8245d9.js",
-      "static/chunks/main-app-c8e44eba5c95730b.js",
-      "static/chunks/ee560e2c-187b6180bbd5d9ec.js",
-      "static/chunks/ca377847-16a0819de833504a.js",
-      "static/chunks/173-574597b6a5463eb6.js",
-      "static/chunks/105-b022102418c76198.js",
-      "static/chunks/359-9c748f940770f324.js",
-      "static/chunks/app/calculator-results/page-9048b816f333ac7b.js"
-    ],
-    "/calculator/page": [
-      "static/chunks/webpack-5f990fe08806f029.js",
-      "static/chunks/fd9d1056-844a5cc198651369.js",
-      "static/chunks/23-131937bdce8245d9.js",
-      "static/chunks/main-app-c8e44eba5c95730b.js",
-      "static/chunks/ee560e2c-187b6180bbd5d9ec.js",
-      "static/chunks/173-574597b6a5463eb6.js",
-      "static/chunks/105-b022102418c76198.js",
-      "static/chunks/app/calculator/page-9e4513933ccc9a2f.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
     ],
     "/life-insurance/page": [
-      "static/chunks/webpack-5f990fe08806f029.js",
-      "static/chunks/fd9d1056-844a5cc198651369.js",
-      "static/chunks/23-131937bdce8245d9.js",
-      "static/chunks/main-app-c8e44eba5c95730b.js",
-      "static/chunks/ee560e2c-187b6180bbd5d9ec.js",
-      "static/chunks/8e1d74a4-4650afdf3f3f8740.js",
-      "static/chunks/9c4e2130-62e0d841cd5df3f4.js",
-      "static/chunks/173-574597b6a5463eb6.js",
-      "static/chunks/105-b022102418c76198.js",
-      "static/chunks/114-59fdd4b1038171be.js",
-      "static/chunks/77-318c82eb9eaf949f.js",
-      "static/chunks/859-b0cf14c5989c0c98.js",
-      "static/chunks/app/life-insurance/page-326cd7d08a9fb152.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/life-insurance/page.js"
     ],
     "/page": [
-      "static/chunks/webpack-5f990fe08806f029.js",
-      "static/chunks/fd9d1056-844a5cc198651369.js",
-      "static/chunks/23-131937bdce8245d9.js",
-      "static/chunks/main-app-c8e44eba5c95730b.js",
-      "static/css/3a24c022f69a36a9.css",
-      "static/chunks/ee560e2c-187b6180bbd5d9ec.js",
-      "static/chunks/8e1d74a4-4650afdf3f3f8740.js",
-      "static/chunks/9c4e2130-62e0d841cd5df3f4.js",
-      "static/chunks/eec3d76d-226fe8e778968ed7.js",
-      "static/chunks/173-574597b6a5463eb6.js",
-      "static/chunks/105-b022102418c76198.js",
-      "static/chunks/114-59fdd4b1038171be.js",
-      "static/chunks/77-318c82eb9eaf949f.js",
-      "static/chunks/757-f391db377412ea94.js",
-      "static/chunks/859-b0cf14c5989c0c98.js",
-      "static/chunks/app/page-80fe91c721e6cc10.js"
-    ],
-    "/personal-information/page": [
-      "static/chunks/webpack-5f990fe08806f029.js",
-      "static/chunks/fd9d1056-844a5cc198651369.js",
-      "static/chunks/23-131937bdce8245d9.js",
-      "static/chunks/main-app-c8e44eba5c95730b.js",
-      "static/chunks/ee560e2c-187b6180bbd5d9ec.js",
-      "static/chunks/173-574597b6a5463eb6.js",
-      "static/chunks/105-b022102418c76198.js",
-      "static/chunks/app/personal-information/page-ffb31e928888d4f5.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/page.css",
+      "static/chunks/app/page.js"
     ],
     "/personal-wealth-potential/page": [
-      "static/chunks/webpack-5f990fe08806f029.js",
-      "static/chunks/fd9d1056-844a5cc198651369.js",
-      "static/chunks/23-131937bdce8245d9.js",
-      "static/chunks/main-app-c8e44eba5c95730b.js",
-      "static/chunks/ee560e2c-187b6180bbd5d9ec.js",
-      "static/chunks/8e1d74a4-4650afdf3f3f8740.js",
-      "static/chunks/9c4e2130-62e0d841cd5df3f4.js",
-      "static/chunks/173-574597b6a5463eb6.js",
-      "static/chunks/105-b022102418c76198.js",
-      "static/chunks/114-59fdd4b1038171be.js",
-      "static/chunks/859-b0cf14c5989c0c98.js",
-      "static/chunks/app/personal-wealth-potential/page-c42e34d76c9c2e2b.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/personal-wealth-potential/page.js"
     ],
-    "/template/page": [
-      "static/chunks/webpack-5f990fe08806f029.js",
-      "static/chunks/fd9d1056-844a5cc198651369.js",
-      "static/chunks/23-131937bdce8245d9.js",
-      "static/chunks/main-app-c8e44eba5c95730b.js",
-      "static/chunks/173-574597b6a5463eb6.js",
-      "static/chunks/app/template/page-6b49bdef4ca442fc.js"
-    ],
-    "/test/page": [
-      "static/chunks/webpack-5f990fe08806f029.js",
-      "static/chunks/fd9d1056-844a5cc198651369.js",
-      "static/chunks/23-131937bdce8245d9.js",
-      "static/chunks/main-app-c8e44eba5c95730b.js",
-      "static/chunks/app/test/page-a87733ac4ba0e46c.js"
+    "/calculator/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/calculator/page.js"
     ]
   }
 }

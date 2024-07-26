@@ -354,7 +354,7 @@ export default function LifeInsurance() {
       ) : (
         <>
           <Header />
-          <section className="flex flex-col h-screen  lg:flex-row mb-10 lg:mb-0 text-[#00262B] ">
+          <section className="flex flex-col min-h-screen  lg:flex-row mb-10 lg:mb-0 text-[#00262B] ">
             <div className="w-full flex flex-col mt-[20px] lg:mt-[140px] relative px-5  xl:px-[80px]">
               <Slider sliderValue={sliderValue} />
 
@@ -363,7 +363,7 @@ export default function LifeInsurance() {
               >
                 {renderStep(step)}
               </div>
-              <div className="xl:absolute mt-[50px] xl:bottom-20 2xl:bottom-24 text-[18px] gap-[20px] left-0 right-0 mx-auto flex justify-center">
+              <div className="xl:absolute mt-[50px] xl:bottom-14 2xl:bottom-24 text-[18px] gap-[20px] left-0 right-0 mx-auto flex justify-center">
                 <button
                   className={`px-[34px] py-[12px]  rounded-lg ${
                     step > 1
@@ -393,36 +393,6 @@ export default function LifeInsurance() {
               </div>
             </div>
             <div className="w-full lg:w-full h-full lg:mt-0 lg:block hidden">
-              {/* <div className="relative w-full h-screen">
-                <div className="relative hidden lg:block w-full h-screen shadow-overlay">
-                  <Image
-                    src="/images/Family.jpg"
-                    alt="HeroImg"
-                    layout="fill"
-                    objectFit="cover"
-                    className="w-full h-full"
-                  />
-                </div>
-                <div className="absolute inset-0 flex items-end mb-20 justify-center">
-                  <div className="w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl p-4 sm:p-6 lg:p-8 bg-[#003336] text-white rounded-xl">
-                    <p className="text-sm sm:text-base lg:text-lg xl:text-xl mb-4">
-                      “I realized that getting life insurance for myself, my
-                      mom, and my child will create endless opportunities and
-                      change our family story forever!”
-                    </p>
-                    <div className="flex items-center">
-                      <div>
-                        <p className="font-semibold text-sm sm:text-base lg:text-lg">
-                          Pamela N, 38
-                        </p>
-                        <p className="text-xs sm:text-sm lg:text-base">
-                          Wealth & Equity customer
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
               {renderCard(step)}
             </div>
           </section>

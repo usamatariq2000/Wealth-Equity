@@ -10,7 +10,7 @@ const UnlockPotential = () => {
   };
 
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-2 gap-[100px] px-5 lg:px-[160px] text-[#00262B] mt-[30px] lg:mb-[50px] sm:mb-[50px] xxs:mb-[130px] h-screen">
+    <section className="grid grid-cols-1 lg:grid-cols-2 gap-[100px] lg:gap-[40px] px-5 lg:px-[160px] text-[#00262B] mt-[30px] lg:mb-[50px] sm:mb-[70px] xxs:mb-[80px] min-h-screen">
       <div className="flex flex-col justify-center items-start w-full lg:order-2">
         <p className="text-sm font-medium leading-14 tracking-[1px] text-left font-haylard mt-5 mb-5">
           {content.subheader}

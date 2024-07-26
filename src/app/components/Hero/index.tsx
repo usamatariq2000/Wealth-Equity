@@ -38,34 +38,8 @@ const Hero = () => {
               height={240}
             />
           </div>
-          {/* <div className="lg:hidden p-10">
-            <Image
-              src="/images/Photo.png"
-              className="rounded-xl"
-              alt="Photo"
-              layout="responsive"
-              width={240}
-              height={240}
-            />
-          </div> */}
-          {/* <div className="absolute bottom-20 left-20 font-halyard  lg:left-52 w-[400px] p-6 bg-[#003336] text-white rounded-xl">
-            <p className="text-lg mb-4">
-              “I realized that getting life insurance for myself, my mom, and my child will create endless opportunities and change our family story forever!”
-            </p>
-            <div className="flex items-center ">
-              <div>
-                <p className="font-semibold">Pamela N, 38</p>
-                <p className="text-sm">Wealth & Equity customer</p>
-              </div>
-              <button
-                className="absolute bottom-20 right-[-20px] bg-[#FCFF7F] hover:bg-[#f8ffb4] p-3 rounded-full"
-              >
-                <FaArrowRight size={16} color='black' />
-              </button>
-            </div>
-          </div> */}
+          
         </div>
-        {/* <div></div> */}
       </div>
     </section>
   );

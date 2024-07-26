@@ -1,12 +1,7 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/calculator-results/page": "app/calculator-results/page.js",
-  "/calculator/page": "app/calculator/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/personal-information/page": "app/personal-information/page.js",
   "/life-insurance/page": "app/life-insurance/page.js",
   "/page": "app/page.js",
-  "/personal-information/page": "app/personal-information/page.js",
   "/personal-wealth-potential/page": "app/personal-wealth-potential/page.js",
-  "/template/page": "app/template/page.js",
-  "/test/page": "app/test/page.js"
+  "/calculator/page": "app/calculator/page.js"
 }

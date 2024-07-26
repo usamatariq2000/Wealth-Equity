@@ -45,16 +45,16 @@ const DesktopNav = () => {
         </Link>
         <nav className="flex md:gap-[30px] xl:gap-[51px] font-halyard font-bold">
           <Link href="/life-insurance">
-            <p className={`${isActive('/personal-information') || isActive('/calculator-results') ? "text-white" : "text-[#00262B]"} md:text-[10px] lg:text-[13px] xl:text-[16px] hover:text-[#19575f]`}>Life Insurance</p>
+            <p className={`${isActive('/personal-information') || isActive('/calculator-results') ? "text-white" : "text-[#00262B]"} md:text-[10px] lg:text-[12px] xl:text-[14px] 2xl:text-[16px] hover:text-[#19575f]`}>Life Insurance</p>
           </Link>
           <Link href="/stories">
-            <p className={`${isActive('/personal-information') || isActive('/calculator-results') ? "text-white" : "text-[#00262B]"} md:text-[10px] lg:text-[13px] xl:text-[16px] hover:text-[#19575f]`}>Stories</p>
+            <p className={`${isActive('/personal-information') || isActive('/calculator-results') ? "text-white" : "text-[#00262B]"} md:text-[10px] lg:text-[12px] xl:text-[14px] 2xl:text-[16px] hover:text-[#19575f]`}>Stories</p>
           </Link>
           <Link href="/campaigns">
-            <p className={`${isActive('/personal-information') || isActive('/calculator-results') ? "text-white" : "text-[#00262B]"} md:text-[10px] lg:text-[13px] xl:text-[16px] hover:text-[#19575f]`}>Campaigns</p>
+            <p className={`${isActive('/personal-information') || isActive('/calculator-results') ? "text-white" : "text-[#00262B]"} md:text-[10px] lg:text-[12px] xl:text-[14px] 2xl:text-[16px] hover:text-[#19575f]`}>Campaigns</p>
           </Link>
           <Link href="/about-us">
-            <p className={`${isActive('/personal-information') || isActive('/calculator-results') ? "text-white" : "text-[#00262B]"} md:text-[10px] lg:text-[13px] xl:text-[16px] hover:text-[#19575f]`}>About Us</p>
+            <p className={`${isActive('/personal-information') || isActive('/calculator-results') ? "text-white" : "text-[#00262B]"} md:text-[10px] lg:text-[12px] xl:text-[14px] 2xl:text-[16px] hover:text-[#19575f]`}>About Us</p>
           </Link>
         </nav>
       </div>

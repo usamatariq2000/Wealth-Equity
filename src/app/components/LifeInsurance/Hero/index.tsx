@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FaArrowRight } from 'react-icons/fa';
+import { FaArrowRight } from "react-icons/fa";
 
 const Hero = () => {
   const content = {
@@ -11,35 +11,39 @@ const Hero = () => {
   };
 
   return (
-    <section className="flex flex-col items-center  md:flex-row text-[#00262B] ">
-      <div className="w-full flex flex-col justify-center px-5 lg:px-16 mt-[50px] lg:mt-[120px]">
-        <b className="tracking-widest font-semibold font-halyard leading-14 tracking-tighter text-left text-transform: uppercase my-4 text-[14px] lg:text-[16px]">
+    <section className="flex flex-col items-center lg:flex-row  lg:mb-0 text-[#00262B] ">
+      <div className="w-full flex flex-col justify-center px-5 lg:px-16 mt-[50px] md:mt-[100px]">
+        <b className="tracking-widest font-bold font-halyard leading-14 tracking-tighter text-left text-transform: uppercase my-4 text-[10px] md:text-[12px] lg:text-[12px] xl:text-[16px]">
           {content.subheader}
         </b>
         <h1
-          className="text-[40px] lg:text-[64px] leading-[50px] lg:leading-[72px]  lg:w-[100%] md:w-[70%] xxs:w-[90%]  font-jubilee mb-6"
+          className="text-[45px] lg:text-[45px] xl:text-[64px] leading-[50px] lg-leading-[53px] xl:leading-[72px] font-jubilee mb-6"
           style={{ letterSpacing: "-2.5%" }}
         >
-          Secure a <div className="parallelogram bg-[#FCFF7F] inline-block mr-2"><p className="md:pr-3 ">new future</p></div>
-          and narrative for your family
+          Secure a{" "}
+          <div className="parallelogram bg-[#FCFF7F] inline-block mr-2">
+            <p className="md:pr-3 ">new future</p>
+          </div>
+          and narrative for your family{" "}
         </h1>
-        <p className="text-md lg:text-lg font-medium text-[20px] font-[#00262B]">{content.description}</p>
-        <button className="px-4 py-3 bg-[#00555A] text-[#F9F1EC] font-bold rounded-lg w-fit hover:bg-[hover:bg-[#00abb3]] mt-5 font-haylard">
+        <p className="text-md lg:text-[14px] xl:text-lg mb-6 font-light-haylard font-bold">
+          {content.description}
+        </p>
+        <button className="px-4 py-3 bg-[#00555A] text-[#F9F1EC] font-halyard font-bold rounded-lg w-fit hover:bg-[hover:bg-[#00abb3]] mt-5 font-haylard">
           {content.button}
         </button>
       </div>
-      <div className=" lg:w-full  lg:mt-0">
-        <div className="relative"> 
-          <div className="hidden lg:block  ">
+      <div className="w-full lg:w-full lg:mt-0">
+        <div className="relative">
+          <div className="hidden lg:block">
             <Image
               src="/images/Hero-Slice2.png"
               alt="HeroImg"
               layout="responsive"
-              width={20}
-              height={20}
+              width={240}
+              height={240}
             />
           </div>
- 
         </div>
       </div>
     </section>
@@ -47,5 +51,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-

@@ -10,12 +10,12 @@ const TypesOfLifeInsurance = () => {
     };
 
     return (
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-[10px] px-5 lg:px-16 text-[#00262B] mt-[100px] lg:mb-[200px] sm:mb-[100px] xxs:mb-[230px] h-screen">
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-[50px] px-5 lg:px-16 text-[#00262B] mt-[100px] lg:mb-[5px]  sm:mb-[100px] xxs:mb-[120px] h-screen">
             <div className="flex flex-col justify-center w-full">
                 <b className="text-base font-bold leading-14 tracking-tighter tracking-[1px] text-left font-light-haylard mt-5 mb-5">
                     {content.subheader}
                 </b>
-                <h1 className="text-[32px] lg:text-[64px]" style={{ fontFamily: 'OTJubileeDiamond', lineHeight: '64px', letterSpacing: '-1.5%' }}>
+                <h1 className="text-[32px] lg:text-[64px] leading-tight" style={{ fontFamily: 'OTJubileeDiamond', letterSpacing: '-1.5%' }}>
                     {content.header}
                 </h1>
                 <p className="text-lg mb-6 font-light-haylard mt-5 font-bold" style={{ lineHeight: '32px', letterSpacing: '-1%' }}>
@@ -26,6 +26,7 @@ const TypesOfLifeInsurance = () => {
                 <ImageCarousel />
             </div>
         </section>
+        
     );
 };
 

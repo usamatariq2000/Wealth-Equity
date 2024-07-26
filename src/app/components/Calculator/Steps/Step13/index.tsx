@@ -9,7 +9,7 @@ interface QuizStepProps {
 }
 
 const content = {
-  header: "Is your life coverage personally owned, or purchased through your employer?",
+  header: "What type of life insurance policy do you own?",
   
 };
 

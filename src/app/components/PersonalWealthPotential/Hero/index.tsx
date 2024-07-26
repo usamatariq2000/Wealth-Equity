@@ -29,10 +29,10 @@ const Hero = () => {
           {content.description}
         </p>
         <div className="flex md:flex-row flex-col md:gap-4">
-          <button className="px-4 py-3 bg-[#00555A] text-[#F9F1EC] font-halyard whitespace-nowrap md:text-lg font-500 rounded-lg w-fit hover:bg-[#569B9B] mt-5 font-haylard  transition duration-300 ">
+          <button className="px-4 py-3 bg-[#00555A] text-[#F9F1EC] font-halyard whitespace-nowrap text-xs sm:text-md md:text-lg font-500 rounded-lg w-fit hover:bg-[#569B9B] mt-5 font-haylard  transition duration-300 ">
             {content.button}
           </button>
-          <button className="md:px-4 px-1 py-3 bg-transparent text-[#00262B] font-halyard whitespace-nowrap md:text-lg font-500 rounded-lg w-fit hover:text-[#569B9B] transition duration-300 mt-5 font-haylard">
+          <button className="md:px-4 px-1 py-3 bg-transparent text-[#00262B] font-halyard whitespace-nowrap text-xs sm:text-md md:text-lg font-500 rounded-lg w-fit hover:text-[#569B9B] transition duration-300 mt-5 font-haylard">
             {content.button1}
           </button>
         </div>
