@@ -359,7 +359,7 @@ export default function LifeInsurance() {
               <Slider sliderValue={sliderValue} />
 
               <div
-                className={`transition-opacity duration-500 text-[#00262B] ease-in-out mt-[40px] inset-0 opacity-100`}
+                className={`transition-opacity duration-500 min-h-auto text-[#00262B] ease-in-out mt-[40px] inset-0 opacity-100`}
               >
                 {renderStep(step)}
               </div>

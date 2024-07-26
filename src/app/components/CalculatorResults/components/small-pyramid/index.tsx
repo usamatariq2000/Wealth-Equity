@@ -3,7 +3,7 @@ import React from "react";
 const SmallPyramid = () => {
   return (
     <>
-      <div className="flex flex-col items-center gap-1 sm:gap-2 md:gap-2">
+      <div className="flex flex-col  items-center gap-1 sm:gap-2 md:gap-2">
         <div
           className="relative w-0 h-0 group
           md:border-l-[17px] border-l-[21px] border-l-transparent

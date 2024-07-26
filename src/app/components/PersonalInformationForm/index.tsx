@@ -15,7 +15,7 @@ const PersonalInformationForm = () => {
             placeholder="Enter your first name"
             className="px-4 py-3 w-full font-halyard border text-sm bg-[#fcf8f5] border-[#e0d9d4] rounded-lg focus:outline-none focus:border-[#7d7976]"
           />
-        </div>10px
+        </div>
         <div className="flex w-full flex-col gap-2 ">
           <label className="text-sm font-halyard">Last Name</label>
           <input

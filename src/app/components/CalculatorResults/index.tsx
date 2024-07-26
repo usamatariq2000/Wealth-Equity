@@ -149,11 +149,11 @@ const CalculatorResults = () => {
             Recommended Life Avenue
           </p>
           <div className="flex md:flex-row flex-col bg-[#003336] items-center md:items-start rounded-lg gap-1 p-6">
-            <div className="w-[30%]">
+            <div className="w-[30%] hidden lg:block">
               <SmallPyramid />
             </div>
-            <div className="flex flex-col gap-4 w-[70%] text-[#F9F1EC]">
-              <p className="md:text-6xl text-2xl font-jubilee  font-normal">
+            <div className="flex flex-col gap-4 lg:w-[70%] text-[#F9F1EC]">
+              <p className="md:text-6xl text-4xl font-jubilee  font-normal">
                 Protect
               </p>
               <p className="font-halyard-text text-sm md:text-[18px] text-[#F9F1EC] font-medium">

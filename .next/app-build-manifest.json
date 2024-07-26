@@ -1,9 +1,9 @@
 {
   "pages": {
-    "/personal-information/page": [
+    "/calculator/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/personal-information/page.js"
+      "static/chunks/app/calculator/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
@@ -11,26 +11,10 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/life-insurance/page": [
+    "/calculator-results/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/life-insurance/page.js"
-    ],
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/page.css",
-      "static/chunks/app/page.js"
-    ],
-    "/personal-wealth-potential/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/personal-wealth-potential/page.js"
-    ],
-    "/calculator/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/calculator/page.js"
+      "static/chunks/app/calculator-results/page.js"
     ]
   }
 }
