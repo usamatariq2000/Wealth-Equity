@@ -8,6 +8,8 @@ import { useInView } from "react-intersection-observer";
 import { FaFacebook } from "react-icons/fa";
 import { IoLogoYoutube } from "react-icons/io5";
 import { FaLinkedinIn } from "react-icons/fa";
+import { usePathname } from "next/navigation";
+
 
 const Footer = () => {
   const links = [
@@ -54,6 +56,9 @@ const Footer = () => {
       return () => clearInterval(interval);
     }
   }, [inView]);
+
+  const pathname = usePathname();
+  const isActive = (path:any) => pathname === path;
 
   return (
     <div className="bg-[#00555A] p-4 md:p-20 ">
@@ -103,7 +108,7 @@ const Footer = () => {
           />
         </div>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-28 md:py-10  ">
+      <div className={`${isActive('/coverage-options')? "hidden" : ""} grid grid-cols-1 lg:grid-cols-2 gap-28 md:py-10`}>
         <div
           className="bg-cover bg-center rounded-2xl p-3 md:p-10 relative"
           style={{

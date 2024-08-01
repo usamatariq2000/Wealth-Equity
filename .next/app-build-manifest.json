@@ -1,9 +1,9 @@
 {
   "pages": {
-    "/calculator/page": [
+    "/calculator-results/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/calculator/page.js"
+      "static/chunks/app/calculator-results/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
@@ -11,10 +11,15 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/calculator-results/page": [
+    "/calculator/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/calculator-results/page.js"
+      "static/chunks/app/calculator/page.js"
+    ],
+    "/coverage-options/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/coverage-options/page.js"
     ]
   }
 }

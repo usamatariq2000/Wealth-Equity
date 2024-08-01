@@ -67,7 +67,7 @@ const DesktopNav = () => {
       </nav>
     </div>
     <div className="flex gap-3 font-halyard items-center justify-center mb-20 mt-5">
-      <Link href="/sign-in"><p className={`px-4 py-2 md:text-[10px] xl:text-[16px]   ${isActive('/life-insurance')? "text-[#00262B] font-semibold" : "text-white font-medium"}`}>Sign In</p></Link>
+      <Link href="/sign-in"><p className={`px-4 py-2 md:text-[10px] xl:text-[16px]   ${isActive('/life-insurance') || isActive('/coverage-options') ? "text-[#00262B] font-semibold" : "text-white font-medium"}`}>Sign In</p></Link>
       <Link href="/get-started"><p className="px-3 py-3 xl:px-4 xl:py-4 md:text-[10px] xl:text-[16px] bg-[#FCFF7F] text-[#00262B] xl:rounded-xl md:rounded-lg hover:bg-[#feffc6] font-semibold">Get Started</p></Link>
     </div>
   </header>

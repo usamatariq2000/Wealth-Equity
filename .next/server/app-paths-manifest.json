@@ -1,5 +1,4 @@
 {
-  "/calculator/page": "app/calculator/page.js",
   "/calculator-results/page": "app/calculator-results/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
+  "/coverage-options/page": "app/coverage-options/page.js"
 }

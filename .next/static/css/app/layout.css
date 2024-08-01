@@ -1242,9 +1242,6 @@ video {
 .w-\[60\%\] {
   width: 60%;
 }
-.w-\[70\%\] {
-  width: 70%;
-}
 .w-\[80\%\] {
   width: 80%;
 }
@@ -1636,6 +1633,9 @@ video {
 }
 .items-center {
   align-items: center;
+}
+.items-baseline {
+  align-items: baseline;
 }
 .justify-start {
   justify-content: flex-start;
@@ -2557,6 +2557,10 @@ video {
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
 }
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -2902,6 +2906,10 @@ video {
 .text-\[\#003336\] {
   --tw-text-opacity: 1;
   color: rgb(0 51 54 / var(--tw-text-opacity));
+}
+.text-\[\#004448\] {
+  --tw-text-opacity: 1;
+  color: rgb(0 68 72 / var(--tw-text-opacity));
 }
 .text-\[\#004649\] {
   --tw-text-opacity: 1;
@@ -3802,40 +3810,37 @@ video {
     rgb(var(--background-start-rgb));
 } */
 
-
-
 @font-face {
-  font-family: 'HalyardTextRegular';
-  src: url('/fonts/fonnts.com-Halyard_Micro.otf') format('opentype');
+  font-family: "HalyardTextRegular";
+  src: url("/fonts/fonnts.com-Halyard_Micro.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'HalyardTextDisplay';
-  src: url('/fonts/Halyard-Text-Light.ttf') format('opentype');
+  font-family: "HalyardTextDisplay";
+  src: url("/fonts/Halyard-Text-Light.ttf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'OTJubileeDiamond';
-  src: url('/fonts/OTJubilee-Platinum.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'HalyardTextLight';
-  src: url('/fonts/fonnts.com-Halyard_Micro_Light.otf') format('opentype');
+  font-family: "OTJubileeDiamond";
+  src: url("/fonts/OTJubilee-Platinum.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'HalyardText';
-  src: url('/fonts/Halyard-Display-Light.ttf') format('opentype');
+  font-family: "HalyardTextLight";
+  src: url("/fonts/fonnts.com-Halyard_Micro_Light.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HalyardText";
+  src: url("/fonts/Halyard-Display-Light.ttf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
@@ -3844,21 +3849,20 @@ video {
   font-family: 'HalyardTextRegular', sans-serif;
 } */
 
-
 .font-halyard {
-  font-family: 'HalyardTextRegular', sans-serif;
+  font-family: "HalyardTextRegular", sans-serif;
 }
 
 .font-halyard-text {
-  font-family: 'HalyardTextDisplay', sans-serif;
+  font-family: "HalyardTextDisplay", sans-serif;
 }
 
 .font-jubilee {
-  font-family: 'OTJubileeDiamond', sans-serif;
+  font-family: "OTJubileeDiamond", sans-serif;
 }
 
 .font-light-haylard {
-  font-family: 'HalyardTextLight', sans-serif;
+  font-family: "HalyardTextLight", sans-serif;
 }
 
 .parallelogram {
@@ -3889,9 +3893,6 @@ video {
   transform: skew(20deg);
 }
 
-
-
-
 /* body {
   font-family: 'HalyardTextRegular', sans-serif;
 } */
@@ -3904,26 +3905,28 @@ video {
 }
 
 .custom-shadow {
-  box-shadow: -10px 4px 30px rgba(0, 0, 0, 0.13), 
-              -8px 4px 15px rgba(0, 0, 0, 0.13);
+  box-shadow: -10px 4px 30px rgba(0, 0, 0, 0.13),
+    -8px 4px 15px rgba(0, 0, 0, 0.13);
 }
 
-
-
 .shadow-overlay::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 30%; /* Adjust the height as needed */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)); /* Adjust the color and opacity as needed */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0)
+  ); /* Adjust the color and opacity as needed */
   z-index: 1; /* Ensure the overlay is above the image */
   pointer-events: none; /* Allow interaction with elements beneath the overlay */
 }
 
 .custom-input::placeholder {
-  color: #E0D9D4;
+  color: #e0d9d4;
   opacity: 1; /* Override Tailwind's default placeholder opacity */
 }
 
@@ -3943,7 +3946,7 @@ video {
 
 .marquee-item {
   padding: 1.5rem;
-  color: #C7C1BD;
+  color: #c7c1bd;
 }
 
 select {
@@ -5094,6 +5097,11 @@ select {
 .hover\:bg-\[\#569B9B\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(86 155 155 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-\[\#FCF8F5\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 248 245 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-\[\#b3fbff\]:hover {
@@ -8324,9 +8332,18 @@ select {
     left: 1.5rem;
   }
 
+  .xxs\:mx-3 {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
+
   .xxs\:mx-\[10\%\] {
     margin-left: 10%;
     margin-right: 10%;
+  }
+
+  .xxs\:mb-12 {
+    margin-bottom: 3rem;
   }
 
   .xxs\:mb-5 {
@@ -8439,6 +8456,11 @@ select {
     padding-right: 1.5rem;
   }
 
+  .xxs\:py-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
   .xxs\:text-\[10px\] {
     font-size: 10px;
   }
@@ -8512,6 +8534,10 @@ select {
     margin-top: 22rem;
   }
 
+  .sm\:block {
+    display: block;
+  }
+
   .sm\:flex {
     display: flex;
   }
@@ -8568,6 +8594,10 @@ select {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .sm\:flex-row {
+    flex-direction: row;
+  }
+
   .sm\:flex-col {
     flex-direction: column;
   }
@@ -8606,6 +8636,10 @@ select {
 
   .sm\:p-6 {
     padding: 1.5rem;
+  }
+
+  .sm\:p-8 {
+    padding: 2rem;
   }
 
   .sm\:px-10 {
@@ -8735,16 +8769,8 @@ select {
     margin-top: 20rem;
   }
 
-  .md\:block {
-    display: block;
-  }
-
   .md\:flex {
     display: flex;
-  }
-
-  .md\:hidden {
-    display: none;
   }
 
   .md\:aspect-square {
@@ -8815,12 +8841,20 @@ select {
     width: 350px;
   }
 
+  .md\:w-\[60\%\] {
+    width: 60%;
+  }
+
   .md\:w-\[65\%\] {
     width: 65%;
   }
 
   .md\:w-\[80\%\] {
     width: 80%;
+  }
+
+  .md\:w-\[100\%\] {
+    width: 100%;
   }
 
   .md\:grid-cols-2 {
@@ -8839,12 +8873,20 @@ select {
     align-items: flex-start;
   }
 
+  .md\:gap-0 {
+    gap: 0px;
+  }
+
   .md\:gap-2 {
     gap: 0.5rem;
   }
 
   .md\:gap-4 {
     gap: 1rem;
+  }
+
+  .md\:gap-5 {
+    gap: 1.25rem;
   }
 
   .md\:gap-6 {
@@ -8988,6 +9030,10 @@ select {
     font-size: 34px;
   }
 
+  .md\:text-\[40px\] {
+    font-size: 40px;
+  }
+
   .md\:text-\[56px\] {
     font-size: 56px;
   }
@@ -9084,8 +9130,17 @@ select {
     margin-right: 2.5rem;
   }
 
+  .lg\:mx-\[20\%\] {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
   .lg\:mb-0 {
     margin-bottom: 0px;
+  }
+
+  .lg\:mb-10 {
+    margin-bottom: 2.5rem;
   }
 
   .lg\:mb-4 {
@@ -9161,6 +9216,10 @@ select {
     width: 350px;
   }
 
+  .lg\:w-\[70\%\] {
+    width: 70%;
+  }
+
   .lg\:w-\[75\%\] {
     width: 75%;
   }
@@ -9171,10 +9230,6 @@ select {
 
   .lg\:w-full {
     width: 100%;
-  }
-
-  .lg\:w-\[70\%\] {
-    width: 70%;
   }
 
   .lg\:max-w-5xl {
@@ -9310,6 +9365,11 @@ select {
   .lg\:px-\[160px\] {
     padding-left: 160px;
     padding-right: 160px;
+  }
+
+  .lg\:py-48 {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
   }
 
   .lg\:py-5 {
@@ -9958,6 +10018,4 @@ select {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 250ms;
 }
-
-
 
