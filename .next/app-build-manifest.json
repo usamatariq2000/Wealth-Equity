@@ -1,25 +1,15 @@
 {
   "pages": {
-    "/calculator-results/page": [
+    "/life-insurance/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/calculator-results/page.js"
+      "static/chunks/app/life-insurance/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
-    ],
-    "/calculator/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/calculator/page.js"
-    ],
-    "/coverage-options/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/coverage-options/page.js"
     ]
   }
 }

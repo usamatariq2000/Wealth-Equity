@@ -1,4 +1,3 @@
 {
-  "/calculator-results/page": "app/calculator-results/page.js",
-  "/coverage-options/page": "app/coverage-options/page.js"
+  "/life-insurance/page": "app/life-insurance/page.js"
 }

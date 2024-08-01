@@ -11,9 +11,6 @@ const data = [
   "Church tithing",
   "Charitable giving",
   "Institutional and organizational endowments",
-  "Downpayments for homes",
-  "College and trade school educations finished",
-  "Businesses started and supported"
 ];
 const marquee = () => {
   return (

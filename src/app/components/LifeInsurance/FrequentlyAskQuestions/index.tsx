@@ -48,13 +48,11 @@ const FrequentlyAskQuestions = () => {
   return (
     <>
       <section className=" px-5 mb-10 lg:px-16 mt-[120px] min-h-screen text-center">
-        <div className="flex sm:mx-[20%] xxs:mx-[10%] justify-between items-center">
+        <div className="flex sm:mx-[20%] xxs:mx-[10%] items-center">
           <h1 className="2xl:text-[64px] xl:text-[44px] md:text-[34px] sm:text-[24px] font-jubilee font-normal text-[#00262B] font-Ot-Jubilee ">
             Frequently asked
           </h1>
-          <button className="md:w-[139px] font-halyard md:h-[48px] xxs:w-[100px] xxs:h-[48px] xxs:text-[12px] md:text-[16px] bg-[#00555A] rounded-md text-white ">
-            View Full FAQ
-          </button>
+          
         </div>
 
         <div className="flex flex-col justify-center items-center w-[100%]">

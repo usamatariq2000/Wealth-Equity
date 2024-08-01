@@ -25,7 +25,7 @@ const Merits: React.FC = () => {
   return (
     <div className="flex flex-col lg:flex-row lg:justify-between items-center px-2 lg:px-10  lg:mt-0  md:h-[85rem] lg:h-[100vh]">
       <div className="w-full mx-8 flex justify-center items-center ">
-        <div className="bg-[#FDFFBF] text-[#00262B] mt-12 md:my-12 aspect-square md:aspect-square rounded-full flex flex-col items-center justify-center text-center p-12 lg:p-6  flex-wrap"
+        <div className="bg-[#FDFFBF] text-[#00262B] mt-12 md:my-12 aspect-square md:aspect-square rounded-full flex flex-col items-center justify-center text-center p-0 lg:p-6  flex-wrap"
         >
           <p className="flex flex-wrap items-center justify-center text-[12px] lg:text-xs xl:text-[16px] lg:mb-4 font-halyard px-6 md:px-12">
             <span className='font-bold'>OUR SOLUTION: </span>THE $500 BILLION WEALTH GAP BRIDGE
