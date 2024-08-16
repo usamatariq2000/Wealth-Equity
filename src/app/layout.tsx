@@ -3,6 +3,7 @@ import { Roboto, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import { Providers } from "./providers";
+import { AuthProvider } from "./context/AuthContext";
 
 const roboto = Roboto({
   weight: "500",
@@ -25,10 +26,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" >
+    <html lang="en">
       <body className={inter.className}>
         <div className="bg-[#F9F1EC] h-full w-full">
-          <Providers>{children}</Providers>
+          <Providers>
+            <AuthProvider>{children}</AuthProvider>
+          </Providers>
         </div>
       </body>
     </html>

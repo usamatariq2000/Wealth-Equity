@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 
 const Hero = () => {
@@ -29,9 +30,10 @@ const Hero = () => {
         <p className="text-md lg:text-[14px] xl:text-lg mb-6 font-light-haylard font-bold">
           {content.description}
         </p>
-        <button className="px-4 py-3 bg-[#00555A] text-[#F9F1EC] font-halyard font-bold rounded-lg w-fit hover:bg-[hover:bg-[#00abb3]] mt-5 font-haylard">
+        
+        <Link href="/personal-wealth-potential"><button className="px-4 py-3 bg-[#00555A] text-[#F9F1EC] font-halyard font-bold rounded-lg w-fit hover:bg-[hover:bg-[#00abb3]] mt-5 font-haylard">
           {content.button}
-        </button>
+        </button></Link>
       </div>
       <div className="w-full lg:w-full lg:mt-0">
         <div className="relative">

@@ -1,15 +1,20 @@
 {
   "pages": {
-    "/life-insurance/page": [
+    "/calculator/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/life-insurance/page.js"
+      "static/chunks/app/calculator/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
+    ],
+    "/calculator-results/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/calculator-results/page.js"
     ]
   }
 }

@@ -55,7 +55,7 @@ const Roadmap: React.FC = () => {
   return (
 
     <div className="grid grid-cols-1 lg:grid-cols-2 p-3 lg:p-12 gap-6 mt-[20rem] sm:mt-[22rem] md:mt-[20rem] lg:mt-0 lg:gap-10 min-h-screen text-[#00262B] ">
-      <div className="p-6 lg:p-10 hidden md:flex flex justify-center relative items-center w-full md:h-full">
+      <div className="p-6 xl:p-10 hidden md:flex flex justify-center relative items-center w-full md:h-full">
         <div
           className="flex justify-center items-center w-full h-full "
           style={{
@@ -65,7 +65,7 @@ const Roadmap: React.FC = () => {
           }}
         >
           <div
-            className="absolute  hidden lg:block inset-0 rounded-[inherit]"
+            className="absolute hidden lg:block inset-0 rounded-[inherit] xl:m-8"
             style={{
               backgroundImage: 'url("/images/pyramidbg.jpeg")',
               backgroundSize: "cover",

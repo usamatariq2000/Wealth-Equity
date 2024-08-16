@@ -3,6 +3,7 @@ import React, { useState } from "react";
 interface Child {
   age: string;
   schoolType: string;
+  amount: string;
 }
 
 interface QuizStepProps {
@@ -14,6 +15,7 @@ const Step9: React.FC<QuizStepProps> = ({ childrenData, onAddChild }) => {
   const [age, setAge] = useState("");
   const [schoolType, setSchoolType] = useState("");
   const [showInputs, setShowInputs] = useState(false);
+  const [amount, setAmount] = useState("");
 
   const handleAddChildClick = () => {
     setShowInputs(true);
@@ -21,9 +23,10 @@ const Step9: React.FC<QuizStepProps> = ({ childrenData, onAddChild }) => {
 
   const handleSaveChildClick = () => {
     if (age && schoolType) {
-      onAddChild({ age, schoolType });
+      onAddChild({ age, schoolType, amount });
       setAge("");
       setSchoolType("");
+      setAmount("");
       setShowInputs(false);
     }
   };
@@ -31,7 +34,7 @@ const Step9: React.FC<QuizStepProps> = ({ childrenData, onAddChild }) => {
   return (
     <div>
       <h1
-        className="text-[35px] lg:text-[35px] 2xl:text-[45px] font-normal font-jubilee mb-6"
+        className="text-[35px] lg:text-[35px] 2xl:text-[45px] leading-tight font-normal font-jubilee mb-6"
         style={{ letterSpacing: "-2.5%" }}
       >
         Do you have children who will require educational funding?
@@ -49,22 +52,24 @@ const Step9: React.FC<QuizStepProps> = ({ childrenData, onAddChild }) => {
             <span className="text-4xl h-14 text-[#00262B] font-light  w-14 flex items-center justify-center bg-[#FCFF7F] rounded-full">
               +
             </span>
-            <span className="ml-2 text-4xl xl:text-2xl 2xl:text-4xl text-[#C7C1BD]">Add a child</span>
+            <span className="ml-2 text-4xl xl:text-2xl 2xl:text-4xl text-[#C7C1BD]">
+              Add a child
+            </span>
           </button>
         )}
         {showInputs && (
           <div className="mt-4 ">
             <div className="flex  justify-between items-center">
-              <div
-                className="flex w-full items-center gap-5 rounded-full "
-              >
+              <div className="flex w-full items-center gap-5 rounded-full ">
                 <button
                   onClick={() => setShowInputs(false)}
                   className="text-2xl h-14 text-[#00262B] font-light  w-14 flex items-center justify-center bg-[#E0D9D4] rounded-full"
                 >
                   x
                 </button>
-                <span className="ml-2 lg:xl xl:2xl 2xl:text-5xl text-[#00262B]">Child</span>
+                <span className="ml-2 lg:xl xl:2xl 2xl:text-3xl text-[#00262B]">
+                  Child
+                </span>
               </div>
               <button
                 onClick={handleSaveChildClick}
@@ -104,17 +109,32 @@ const Step9: React.FC<QuizStepProps> = ({ childrenData, onAddChild }) => {
                   </select>
                 </div>
               </div>
+              <div>
+                  <div className="flex items-center justify-between gap-5 ">
+                    <p className="text-lg font-halyard ">Amount Needed?</p>
+                    <input
+                      type="number"
+                      placeholder="0.00"
+                      value={amount}
+                      onChange={(e) => setAmount(e.target.value)}
+                      className="custom-input block text-center w-[30%] px-4 py-2  text-[30px] font-light-haylard font-semibold text-black bg-transparent border-b-3 border-[#E0D9D4] focus:outline-none focus:border-darkgreen"
+                    />
+                  </div>
+                </div>
             </div>
           </div>
         )}
         {!showInputs && (
           <div className="mt-4 overflow-x-scroll h-[200px] scrollbar-hide px-10">
             {childrenData.map((child, index) => (
-              <div key={index} className="mb-2 mt-2 bg-[#fcf8f5] w-full rounded-lg py-2 px-4 shadow-lg">
+              <div
+                key={index}
+                className="mb-2 mt-2 bg-[#fcf8f5] w-full rounded-lg py-2 px-4 shadow-lg"
+              >
                 <p className="text-2xl font-halyard">Child {index + 1}:</p>
                 <div className="flex gap-5 text-gray-400">
-                <p>Age: {child.age}</p>
-                <p>School Type: {child.schoolType}</p>
+                  <p>Age: {child.age}</p>
+                  <p>School Type: {child.schoolType}</p>
                 </div>
               </div>
             ))}

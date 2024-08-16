@@ -5,56 +5,13 @@ import SmallPyramid from "./components/small-pyramid";
 import { FaChevronRight } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import BarChart from "../BarChart";
-
-export const items = [
-  {
-    id: 1,
-    icon: "/images/Vector.svg",
-    label: "Income Replacement",
-    amount: "$300,000",
-  },
-  {
-    id: 2,
-    icon: "/images/Vector (1).svg",
-    label: "Debt Elimination",
-    amount: "$150,000",
-  },
-  {
-    id: 3,
-    icon: "/images/Vector (2).svg",
-    label: "Childcare",
-    amount: "$100,000",
-  },
-  {
-    id: 4,
-    icon: "/images/Vector (3).svg",
-    label: "Extended Healthcare",
-    amount: "$100,000",
-  },
-  {
-    id: 5,
-    icon: "/images/Vector (4).svg",
-    label: "Education Fund",
-    amount: "$300,000",
-  },
-  {
-    id: 6,
-    icon: "/images/Vector (5).svg",
-    label: "Emergency Fund",
-    amount: "$150,000",
-  },
-  {
-    id: 7,
-    icon: "/images/Vector (7).svg",
-    label: "Final Expenses",
-    amount: "$30,000",
-  },
-];
+import api from "@/app/services/api";
 
 const CalculatorResults = () => {
   const router = useRouter();
   const [sliderValue, setSliderValue] = useState(0);
   const [animate, setAnimate] = useState(false);
+  const [result, setResult] = useState<any>([]);
 
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -71,25 +28,126 @@ const CalculatorResults = () => {
     }
   }, [inView]);
 
+  useEffect(() => {
+    const fetchResults = async () => {
+      try {
+        const response = await api.get("/calculate/results");
+        console.log(response.data);
+        setResult(response.data.results);
+      } catch (error) {
+        console.error("Error fetching results:", error);
+      }
+    };
+
+    fetchResults();
+  }, []);
+
+  const items = [
+    {
+      id: 1,
+      icon: "/images/Vector.svg",
+      label: "Income Replacement",
+      amount: `$${(
+        Number(result[0]?.annualIncome) *
+        Number(result[0]?.percentToProvide) *
+        Number(result[0]?.yearsToProvide)
+      ).toLocaleString()}`,
+    },
+    {
+      id: 2,
+      icon: "/images/Vector (1).svg",
+      label: "Debt Elimination",
+      amount: `$${Number(result[0]?.eliminateDebt)?.toLocaleString()}`,
+    },
+    {
+      id: 3,
+      icon: "/images/Vector (2).svg",
+      label: "Childcare",
+      amount: `$${Number(result[0]?.childcare)?.toLocaleString()}`,
+    },
+    {
+      id: 4,
+      icon: "/images/Vector (3).svg",
+      label: "Extended Healthcare",
+      amount: `$${Number(result[0]?.extendedHealthcare)?.toLocaleString()}`,
+    },
+    {
+      id: 5,
+      icon: "/images/Vector (4).svg",
+      label: "Education Fund",
+      amount: `$${Number(result[0]?.emergencyFund)?.toLocaleString()}`,
+    },
+    {
+      id: 6,
+      icon: "/images/Vector (5).svg",
+      label: "Emergency Fund",
+      amount: `$${(
+        result[0]?.children?.reduce(
+          (sum:any, child:any) => sum + Number(child.amount),
+          0
+        )
+      )?.toLocaleString()}`, // Inline sum and format
+    },
+    {
+      id: 7,
+      icon: "/images/Vector (7).svg",
+      label: "Final Expenses",
+      amount: `$${Number(result[0]?.finalExpense)?.toLocaleString()}`,
+    },
+  ];
+  
+
   const handleButtonClick = () => {
     router.push("/personal-information");
   };
+
+  const totalSum = items.reduce((total, item) => {
+    // Extract numerical values from the amount strings
+    const amountValue = Number(item?.amount.replace(/[^0-9.-]+/g, '')); // Remove non-numeric characters
+    return total + amountValue;
+  }, 0);
+  
+  // Subtract from lifeInsurance
+  const lifeInsurance = Number(result[0]?.lifeInsurance?.replace(/[^0-9.-]+/g, '')) || 0;
+  const finalAmount = totalSum - lifeInsurance;
+  
+  // Format the total sum for display
+  const formatNumber = (num:any) => {
+    if (num >= 1_000_000) {
+      return `$${(num / 1_000_000).toFixed(2)}M`;
+    } else {
+      return `$${num.toLocaleString()}`;
+    }
+  };
+  const formatInsuranceAndSum = (num:any) => {
+    if (num >= 1_000_000) {
+      return `$${(num / 1_000_000).toFixed(1)}m`;
+    } else if (num >= 1_000) {
+      return `$${(num / 1_000).toFixed(0)}k`;
+    } else {
+      return `$${num.toLocaleString()}`;
+    }
+  };
+  
+  const formattedTotal = formatNumber(finalAmount);
+  const formattedLifeInsurance = formatInsuranceAndSum(lifeInsurance);
+  const formattedSum = formatInsuranceAndSum(totalSum);
 
   return (
     <div className="grid lg:grid-cols-2 grid-cols-1 h-screen w-full">
       <div className="w-full flex items-start justify-center bg-[#00555A] lg:pt-44 pt-16">
         <div className="w-[80%] flex flex-col gap-2.5 md:gap-4">
           <p className="text-[#F9F1EC] font-jubilee font-normal text-3xl md:text-6xl mb-4">
-            Eugene, here’s your Personal Wealth Potential:
+            {result[0]?.firstName}, here’s your Personal Wealth Potential:
           </p>
           <p className="text-[80px] md:text-[160px] text-[#FCFF7F] font-jubilee leading-none mb-4">
-            $1.13M
+            {formattedTotal}
           </p>
           <p className="text-halyard text-base md:text-xl text-[#F9F1EC]">
             Your life insurance coverage is currently{" "}
-            <span className="text-[#FCFF7F]">$150K</span> , which means you’re
+            <span className="text-[#FCFF7F]">{formattedLifeInsurance}</span> , which means you’re
             leaving{" "}
-            <span className="text-[#FCFF7F]">$980K of unprotected wealth </span>
+            <span className="text-[#FCFF7F]">{formattedSum} of unprotected wealth </span>
             on the table.
           </p>
 

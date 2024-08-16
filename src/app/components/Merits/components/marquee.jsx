@@ -17,10 +17,10 @@ const marquee = () => {
     <div className="relative h-full">
       <div className="marquee-content">
         {data.map((item, index) => (
-          <div key={index} className="marquee-item text-3xl font-semibold  md:text-4xl lg:text-4xl"><p className='font-halyard'>{item}</p></div>
+          <div key={index} className="marquee-item text-3xl font-semibold md:text-4xl lg:text-4xl"><p className='font-halyard'>{item}</p></div>
         ))}
         {data.map((item, index) => (
-          <div key={`dup-${index}`} className="marquee-item text-3xl font-semibold md:text-4xl lg:text-4xl"><p className='font-halyard'>{item}</p></div>
+          <div key={`dup-${index}`} className="marquee-item text-3xl  font-semibold md:text-4xl lg:text-4xl"><p className='font-halyard'>{item}</p></div>
         ))}
       </div>
     </div>

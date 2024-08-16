@@ -30,15 +30,17 @@ import Card10 from "../components/Calculator/Cards/Card10";
 import Card11 from "../components/Calculator/Cards/Card11";
 import Card12 from "../components/Calculator/Cards/Card12";
 import Card13 from "../components/Calculator/Cards/Card13";
-
+import Card14 from "../components/Calculator/Cards/Card14";
 import LoaderHeader from "../components/Calculator/LoaderHeader";
 import { useRouter } from "next/navigation";
-
+import Step14 from "../components/Calculator/Steps/Step14";
+import api from "../services/api";
 
 export default function LifeInsurance() {
   interface Child {
     age: string;
     schoolType: string;
+    amount: string;
   }
 
   interface QuizResponse {
@@ -56,6 +58,7 @@ export default function LifeInsurance() {
     lifeInsurance: string;
     personalOrEmployer: string;
     typeOfInsurance: string;
+    finalExpense: string;
     children: Child[];
   }
 
@@ -78,6 +81,7 @@ export default function LifeInsurance() {
     lifeInsurance: "",
     personalOrEmployer: "",
     typeOfInsurance: "",
+    finalExpense: "",
     children: [],
   });
 
@@ -235,12 +239,19 @@ export default function LifeInsurance() {
         );
       case 12:
         return (
+          <Step14
+            answer={responses.finalExpense}
+            onChange={handleChange("finalExpense")}
+          />
+        );
+      case 13:
+        return (
           <Step12
             onTypeChange={handlePersonalOrEmployer}
             data={responses.personalOrEmployer}
           />
         );
-      case 13:
+      case 14:
         return (
           <Step13
             onTypeChange={handleTypeOfInsurance}
@@ -256,80 +267,77 @@ export default function LifeInsurance() {
   const renderCard = (step: number) => {
     switch (step) {
       case 1:
-        return (
-          <Card1/>
-        );
+        return <Card1 />;
       case 2:
-        return (
-          <Card2/>
-        );
+        return <Card2 />;
       case 3:
-        return (
-          <Card3/>
-        );
+        return <Card3 />;
       case 4:
-        return (
-          <Card4/>
-        );
+        return <Card4 />;
       case 5:
-        return (
-          <Card5/>
-        );
+        return <Card5 />;
       case 6:
-        return (
-          <Card6/>
-        );
+        return <Card6 />;
       case 7:
-        return (
-          <Card7/>
-        );
+        return <Card7 />;
       case 8:
-        return (
-          <Card8/>
-        );
+        return <Card8 />;
       case 9:
-        return (
-          <Card9/>
-        );
+        return <Card9 />;
       case 10:
-        return (
-          <Card10/>
-        );
+        return <Card10 />;
       case 11:
-        return (
-          <Card11/>
-        );
+        return <Card11 />;
       case 12:
-        return (
-          <Card12/>
-        );
+        return <Card14 />;
       case 13:
-        return (
-          <Card13/>
-        );
+        return <Card12 />;
+      case 14:
+        return <Card13 />;
 
       default:
         return null;
     }
   };
 
-  const handleButtonClick = () => {
-    if (step < 13) {
+
+  const handleButtonClick = async () => {
+    if (step < 14) {
       setStep(step + 1);
-      setSliderValue((prev) => (prev <= 100 ? prev + 7.4 : 100));
+      setSliderValue((prev) => (prev <= 100 ? prev + 6.8 : 100));
     } else {
       setLoading(true);
-      // Simulate an API call with a delay
-      setTimeout(() => {
-        
-        router.push('/calculator-results'); // Navigate to calculator-results route
-      }, 3000); // 3 seconds delay
+      try {
+        const response = await api.post("/auth/createUserAndSaveResults", {
+          firstName: responses.firstName,
+          email: responses.email,
+          quizResponses: responses,
+        });
+
+        if (response.status === 201) {
+          // Save the token if a new user was created
+          console.log(response.data.token);
+          const token = response.data.token;
+
+          if (token) {
+            localStorage.setItem("token", token);
+          }
+          router.push("/calculator-results"); // Navigate to results page
+        } else {
+          console.error(response.data.error);
+          // Handle error (e.g., show error message)
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      } finally {
+        // setLoading(false);
+      }
     }
   };
 
   const handleBackButtonClick = () => {
     if (step > 1) setStep(step - 1);
-    setSliderValue((prev) => (prev > 7.4 ? prev - 7.4 : 7.4)); // Increase slider value by 10% each click
+    setSliderValue((prev) => (prev > 6.8 ? prev - 6.8 : 6.8)); // Increase slider value by 10% each click
   };
 
   console.log(responses);

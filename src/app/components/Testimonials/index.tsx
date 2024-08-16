@@ -171,8 +171,8 @@ const Testimonials = () => {
           <h2 className="text-3xl md:text-5xl font-jubilee text-[#003336] tracking-[0.5px]">
             Hear from Wealth & Equity customers
             <br /> about how{" "}
-            <div className="parallelogram bg-[#FCFF7F] inline-block mr-2">
-              <p className="md:pr-3">life insurance changes lives</p>
+            <div className="parallelogram bg-[#FCFF7F] inline-block ">
+              <p className="">life insurance changes lives</p>
             </div>
           </h2>
         </div>
