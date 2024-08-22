@@ -383,7 +383,7 @@ export default function LifeInsurance() {
                 >
                   Back
                 </button>
-                {step < 13 ? (
+                {step < 14 ? (
                   <button
                     className="px-[34px] py-[12px] rounded-lg bg-[#00555A] text-white ml-2"
                     onClick={handleButtonClick}

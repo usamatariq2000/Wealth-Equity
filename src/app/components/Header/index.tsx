@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import {useDisclosure} from "@nextui-org/react";
 import {
   FiMenu,
   FiX,
@@ -12,12 +13,16 @@ import {
   FiChevronDown,
   FiChevronRight,
 } from "react-icons/fi";
+import SignInModal from "../SignInModal";
+import GetStartedModal from "../GetStartedModal";
 
 
 const Header = () => {
 
 
-  
+  const {isOpen:isModalOpen, onOpen, onOpenChange} = useDisclosure();
+  const {isOpen:isGetStartedModalOpen, onOpen:onGetStartedOpen, onOpenChange:onGetStartedOpenChange} = useDisclosure();
+
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -26,12 +31,14 @@ const Header = () => {
 
   return (
     <div className="w-full z-50 px-4 bg-[#F9F1EC]">
+      <SignInModal isOpen={isModalOpen} onOpenChange={onOpenChange} />
+      <GetStartedModal isOpen={isGetStartedModalOpen} onOpenChange={onGetStartedOpenChange} />
       <div className="flex justify-between items-center bg-transparent text-gray-600">
         <div className="flex items-center">
           <Image src="/images/W&E_Logo.svg" alt="Icon" width={240} height={240} className='pr-[50px] mt-2 block lg:hidden ' />
 
           <div className=" hidden lg:flex">
-            <DesktopNav />
+            <DesktopNav onOpen={onOpen} onGetStartedOpen={onGetStartedOpenChange}/>
           </div>
         </div>
         <div className="flex items-center space-x-6">
@@ -47,7 +54,7 @@ const Header = () => {
   );
 };
 
-const DesktopNav = () => {
+const DesktopNav = ({onOpen, onGetStartedOpen}:any) => {
   
 
   const pathname = usePathname();
@@ -67,8 +74,8 @@ const DesktopNav = () => {
       </nav>
     </div>
     <div className="flex gap-3 font-halyard items-center justify-center mb-20 mt-5">
-      <Link href="/sign-in"><p className={`px-4 py-2 md:text-[10px] xl:text-[16px]   ${isActive('/life-insurance') || isActive('/coverage-options') ? "text-[#00262B] font-semibold" : "text-white font-medium"}`}>Sign In</p></Link>
-      <Link href="/get-started"><p className="px-3 py-3 xl:px-4 xl:py-4 md:text-[10px] xl:text-[16px] bg-[#FCFF7F] text-[#00262B] xl:rounded-xl md:rounded-lg hover:bg-[#feffc6] font-semibold">Get Started</p></Link>
+      <button onClick={onOpen}><p className={`px-4 py-2 md:text-[10px] xl:text-[16px]   ${isActive('/life-insurance') || isActive('/coverage-options') ? "text-[#00262B] font-semibold" : "text-white font-medium"}`}>Sign In</p></button>
+      <button onClick={onGetStartedOpen}><p className="px-3 py-3 xl:px-4 xl:py-4 md:text-[10px] xl:text-[16px] bg-[#FCFF7F] text-[#00262B] xl:rounded-xl md:rounded-lg hover:bg-[#feffc6] font-semibold">Get Started</p></button>
     </div>
   </header>
 );}
@@ -101,10 +108,12 @@ const DropdownMenu = () => (
 );
 
 const NAV_ITEMS = [
-  { label: "Life Insurance", href: "/" },
-  { label: "Stories", href: "/" },
-  { label: "Campaigns", href: "/" },
-  { label: "About Us", href: "/" },
+  { label: "Life Insurance", href: "/life-insurance" },
+  { label: "Stories", href: "/stories" },
+  { label: "Campaigns", href: "/campaigns" },
+  { label: "About Us", href: "/about-us" },
+  { label: "Sign In", href: "/sign-in" },
+  { label: "Get Started", href: "/get-started" },
 ];
 
 export default Header;
