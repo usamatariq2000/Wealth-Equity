@@ -1,10 +1,8 @@
-"use client";
-import React, {useState, useEffect} from "react";
+// components/hero.js
 import Link from "next/link";
 import Image from "next/image";
-import api from "@/app/services/api";
 
-const Blog = () => {
+const Hero = () => {
   const content = {
     header:
       "The typical White family holds about five to six times the wealth of the typical Black or Hispanic family.",
@@ -34,8 +32,7 @@ const Blog = () => {
     {
       category: "ARTICLE",
       title: "Knowledge is power.",
-      subitle:
-        "Financial Literacy 101: Tips for Young Black Professionals",
+      subitle: "Financial Literacy 101: Tips for Young Black Professionals",
       description:
         "We need practical steps to build and maintain generational wealth. From smart investing to effective estate planning, here are a few actionable strategies for your family to get started.",
       image: "/images/Blog.png",
@@ -48,8 +45,7 @@ const Blog = () => {
     {
       category: "GUIDE",
       title: "Knowledge is power.",
-      subitle:
-        "How Personal Wealth Potential Transforms Starting a Family",
+      subitle: "How Personal Wealth Potential Transforms Starting a Family",
       description:
         "We need practical steps to build and maintain generational wealth. From smart investing to effective estate planning, here are a few actionable strategies for your family to get started.",
       image: "/images/Rectangle 442.svg",
@@ -62,8 +58,7 @@ const Blog = () => {
     {
       category: "GUIDE",
       title: "Knowledge is power.",
-      subitle:
-        "Interview: Jamie Logan on Business Succession Planning",
+      subitle: "Interview: Jamie Logan on Business Succession Planning",
       description:
         "We need practical steps to build and maintain generational wealth. From smart investing to effective estate planning, here are a few actionable strategies for your family to get started.",
       image: "/images/Blog.png",
@@ -77,9 +72,9 @@ const Blog = () => {
 
   return (
     <>
-      <div className="lg:mx-10 mb-10 mx-4 p-5 md:p-10 rounded-[24px] lg:h-auto bg-white">
+      <div className=" mb-10 mt-10 rounded-[24px] lg:h-auto">
         <div className="flex flex-col lg:flex-row h-full gap-10 ">
-          <div className="p-4 w-full font-halyard">
+          <div className=" w-full font-halyard">
             <div className="text-[#00262B]">
               <p>Insights & Resources</p>
               <p
@@ -88,39 +83,49 @@ const Blog = () => {
               >
                 {blogs[0].title}
               </p>
-              <Image
-                src="/images/Blog.png"
-                alt="Icon"
-                layout="responsive"
-                width={300}
-                height={240}
-                className="mt-4 mb-4"
-              />
-              <div>
-                <div className="mt-2 flex">
-                  <p className="py-1 px-2 text-[12px] rounded-sm mt-5 bg-[#AACDCD]">
-                    {blogs[0].category}
-                  </p>
+              <div className="md:grid grid-cols-2 gap-10">
+                <div>
+                  <Image
+                    src="/images/Blog.png"
+                    alt="Icon"
+                    layout="responsive"
+                    width={300}
+                    height={240}
+                    className="mt-4 mb-4"
+                  />
                 </div>
-              </div>
-              <p className="text-[24px] font-semibold mt-2">{blogs[0].subitle}</p>
-              <p className="font-light mt-5">{blogs[0].description}</p>
-              <div className="flex items-center">
-                <Image
-                  src="/images/Photo.png"
-                  alt="Icon"
-                  width={40}
-                  height={40}
-                  className="mt-2 rounded-full"
-                />
-                <div className="p-3 flex-col justify-center font-halyard items-center w-full mt-2">
-                  <p>{blogs[0].author.name}</p>
-                  <p className="font-light">{blogs[0].author.designation}</p>
+                <div className="font-light-haylard">
+                  <div>
+                    <div className="mt-2 flex">
+                      <p className="py-1 px-2 text-[12px] rounded-sm mt-5 bg-[#AACDCD]">
+                        {blogs[0].category}
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-[30px] md:text-[38px] lg:text-[44px] font-[600] leading-tight tracking-tighter mt-2">
+                    {blogs[0].subitle}
+                  </p>
+                  <p className="font-semibold mt-5">{blogs[0].description}</p>
+                  <div className="flex items-center">
+                    <Image
+                      src="/images/Photo.png"
+                      alt="Icon"
+                      width={40}
+                      height={40}
+                      className="mt-2 rounded-full"
+                    />
+                    <div className="p-3 flex-col justify-center font-halyard items-center w-full mt-2">
+                      <p>{blogs[0].author.name}</p>
+                      <p className="font-light">
+                        {blogs[0].author.designation}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="p-4 h-full w-full">
+          {/* <div className="p-4 h-full w-full">
             <div className="w-full flex justify-end">
               <button className="px-4 font-semibold font-halyard py-3 bg-none border border-solid border-[#00262B] text-[#00262B] rounded-lg w-fit hover:bg-[#00262B] hover:text-white justify-end">
                 Read more on our blog
@@ -159,11 +164,11 @@ const Blog = () => {
                 </>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
   );
 };
 
-export default Blog;
+export default Hero;

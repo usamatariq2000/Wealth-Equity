@@ -34,7 +34,7 @@ const Step9: React.FC<QuizStepProps> = ({ childrenData, onAddChild }) => {
   return (
     <div>
       <h1
-        className="text-[35px] lg:text-[35px] 2xl:text-[45px] leading-tight font-normal font-jubilee mb-6"
+        className="text-[35px] lg:text-[30px] 2xl:text-[45px] leading-tight font-normal font-jubilee mb-6"
         style={{ letterSpacing: "-2.5%" }}
       >
         Do you have children who will require educational funding?

@@ -1,5 +1,5 @@
 "use client";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useContext, useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import Image from "next/image";
 import Header from "../components/Calculator/Header";
@@ -35,6 +35,8 @@ import LoaderHeader from "../components/Calculator/LoaderHeader";
 import { useRouter } from "next/navigation";
 import Step14 from "../components/Calculator/Steps/Step14";
 import api from "../services/api";
+import AuthContext from "../context/AuthContext";
+import { stringify } from "querystring";
 
 export default function LifeInsurance() {
   interface Child {
@@ -66,10 +68,12 @@ export default function LifeInsurance() {
   const [sliderValue, setSliderValue] = useState(8);
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
+  const [emailError, setEmailError] = useState("");
+  const [userString, setUserString] = useState<any>("");
   const [responses, setResponses] = useState<QuizResponse>({
     firstName: "",
     email: "",
-    age: "18-24", // Default value for step2
+    age: "18-24",
     gender: "",
     annualIncome: "",
     percentToProvide: "",
@@ -85,16 +89,79 @@ export default function LifeInsurance() {
     children: [],
   });
 
+  const isStepValid = () => {
+    if (step === 1) {
+      return responses.firstName !== "" && responses.email !== "";
+    }
+    if (step === 3) {
+      return responses.gender !== "";
+    }
+    if (step === 4) {
+      return responses.annualIncome !== "" && responses.percentToProvide !== "";
+    }
+    if (step === 5) {
+      return responses.yearsToProvide !== "";
+    }
+    if (step === 6) {
+      return responses.eliminateDebt !== "";
+    }
+    if (step === 7) {
+      return responses.childcare !== "";
+    }
+    if (step === 8) {
+      return responses.extendedHealthcare !== "";
+    }
+    if (step === 10) {
+      return responses.emergencyFund !== "";
+    }
+    if (step === 11) {
+      return responses.lifeInsurance !== "";
+    }
+    if (step === 12) {
+      return responses.finalExpense !== "";
+    }
+    if (step === 13) {
+      return responses.personalOrEmployer !== "";
+    }
+    if (step === 14) {
+      return responses.typeOfInsurance !== "";
+    }
+
+    return true;
+  };
+
   const [ageRange, setAgeRange] = useState<any>({ min: 18, max: 24 });
 
-  const handleChange =
-    (step: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
-      setResponses({
-        ...responses,
-        [`${step}` as keyof QuizResponse]: e.target.value,
-      });
-    };
+  useEffect(() => {
+    let user: any = localStorage.getItem("user");
 
+    setUserString(JSON.parse(user))
+  }, []);
+
+  console.log('user',userString)
+
+
+  // const user = JSON?.parse(userString);
+
+  const handleChange =
+    (step: keyof QuizResponse) => (e: React.ChangeEvent<HTMLInputElement>) => {
+      const value = e.target.value;
+
+      // Email validation
+      if (step === "email") {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) {
+          setEmailError("Please enter a valid email address.");
+        } else {
+          setEmailError("");
+        }
+      }
+
+      setResponses((prevResponses) => ({
+        ...prevResponses,
+        [step]: value,
+      }));
+    };
   const handlePlusClick = () => {
     if (ageRange.max < 65) {
       if (ageRange.max === 24) {
@@ -165,6 +232,7 @@ export default function LifeInsurance() {
             onChange1={handleChange("firstName")}
             answer2={responses.email}
             onChange2={handleChange("email")}
+            emailError={emailError}
           />
         );
       case 2:
@@ -300,7 +368,6 @@ export default function LifeInsurance() {
     }
   };
 
-
   const handleButtonClick = async () => {
     if (step < 14) {
       setStep(step + 1);
@@ -308,39 +375,56 @@ export default function LifeInsurance() {
     } else {
       setLoading(true);
       try {
-        const response = await api.post("/auth/createUserAndSaveResults", {
-          firstName: responses.firstName,
-          email: responses.email,
-          quizResponses: responses,
-        });
+        if (userString) {
+          const checkResponse = await api.post("/calculate/check-result", {
+            userId: userString?.id
+          });
 
-        if (response.status === 201) {
-          // Save the token if a new user was created
-          console.log(response.data.token);
-          const token = response.data.token;
+          if (checkResponse.status === 200) {
+            // Result exists, update the existing result
+            const updateResponse = await api.post("/calculate/update-result", {
+              userId: userString?.id,
+              quizResponses: responses,
+            });
 
-          if (token) {
-            localStorage.setItem("token", token);
+            if (updateResponse.status === 200) {
+              router.push("/calculator-results");
+            } else {
+              console.error(updateResponse.data.error);
+            }
           }
-          router.push("/calculator-results"); // Navigate to results page
         } else {
-          console.error(response.data.error);
-          // Handle error (e.g., show error message)
+          const createResponse = await api.post(
+            "/auth/createUserAndSaveResults",
+            {
+              email: responses.email,
+              firstName: responses.firstName,
+              quizResponses: responses,
+            }
+          );
+
+          if (createResponse.status === 201) {
+            const token = createResponse.data.token;
+            if (token) {
+              localStorage.setItem("token", token);
+              router.push("/calculator-results");
+            }
+          } else {
+            console.error(createResponse.data.error);
+          }
         }
       } catch (error) {
         console.error("Error:", error);
-      } finally {
-        // setLoading(false);
       }
     }
   };
 
   const handleBackButtonClick = () => {
     if (step > 1) setStep(step - 1);
-    setSliderValue((prev) => (prev > 6.8 ? prev - 6.8 : 6.8)); // Increase slider value by 10% each click
+    setSliderValue((prev) => (prev > 6.8 ? prev - 6.8 : 6.8));
   };
 
-  console.log(responses);
+  console.log("Response Console", responses);
 
   return (
     <div>
@@ -354,7 +438,7 @@ export default function LifeInsurance() {
                 FINALIZAING CALCULATIONS
               </p>
               <p className="font-jubilee text-8xl text-[#F9F1EC]">
-                Eugene’s Personal Wealth Potential
+                {responses.firstName}'s Personal Wealth Potential
               </p>
             </div>
           </div>
@@ -385,15 +469,25 @@ export default function LifeInsurance() {
                 </button>
                 {step < 14 ? (
                   <button
-                    className="px-[34px] py-[12px] rounded-lg bg-[#00555A] text-white ml-2"
+                    className={`px-[34px] py-[12px] rounded-lg ml-2 ${
+                      isStepValid()
+                        ? "bg-[#00555A] text-white"
+                        : "bg-[#00555A] text-white opacity-50 cursor-not-allowed"
+                    }`}
                     onClick={handleButtonClick}
+                    disabled={!isStepValid()}
                   >
                     {step === 1 ? "Start" : "Next"}
                   </button>
                 ) : (
                   <button
-                    className="px-[34px] py-[12px] rounded-lg bg-[#00555A] text-white ml-2"
+                    className={`px-[34px] py-[12px] rounded-lg ml-2 ${
+                      isStepValid()
+                        ? "bg-[#00555A] text-white"
+                        : "bg-[#00555A] text-white opacity-50 cursor-not-allowed"
+                    }`}
                     onClick={handleButtonClick}
+                    disabled={!isStepValid()}
                   >
                     Submit
                   </button>

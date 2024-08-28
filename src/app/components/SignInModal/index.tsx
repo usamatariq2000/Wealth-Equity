@@ -1,34 +1,142 @@
-import React from "react";
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button } from "@nextui-org/react";
+import React, { useContext, useState } from "react";
+import {
+  Modal,
+  ModalContent,
+  ModalBody,
+  Button
+} from "@nextui-org/react";
+import Image from "next/image";
+import api from "@/app/services/api";
+import { useRouter } from "next/navigation";
+import AuthContext from "@/app/context/AuthContext";
 
-export default function SignInModal({ isOpen, onOpenChange }:any) {
-  return (
-    <>
-      <Modal backdrop="blur" isOpen={isOpen} onOpenChange={onOpenChange}>
-        <ModalContent>
-          {(onClose) => (
-            <>
-              <ModalHeader className="flex flex-col gap-1">Sign In</ModalHeader>
-              <ModalBody>
-                <p> 
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non risus hendrerit venenatis.
-                  Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                </p>
-                {/* Add more content as needed */}
-              </ModalBody>
-              <ModalFooter>
-                <Button color="danger" variant="light" onPress={onClose}>
-                  Close
-                </Button>
-                <Button color="primary" onPress={onClose}>
-                  Sign In
-                </Button>
-              </ModalFooter>
-            </>
-          )}
-        </ModalContent>
-      </Modal>
-    </>
-  );
+interface SignInModalProps {
+  isOpen: boolean;
+  onOpenChange: (open: boolean) => void;
 }
+
+const SignInModal: React.FC<SignInModalProps> = ({ isOpen, onOpenChange }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const router = useRouter();
+  const {setUser} = useContext(AuthContext);
+
+  const validateForm = () => {
+    const newErrors: { [key: string]: string } = {};
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!email) {
+      newErrors.email = 'Email address is required';
+    } else if (!emailRegex.test(email)) {
+      newErrors.email = 'Email address is not valid';
+    }
+
+    if (!password) {
+      newErrors.password = 'Password is required';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    if (validateForm()) {
+      try {
+        const response = await api.post("/auth/login", {
+          email: email,
+          password: password,
+        });
+
+        if (response.status === 200) {
+          const { token, user } = response.data;
+          if (token) {
+            localStorage.setItem("token", token);
+            localStorage.setItem("user", JSON.stringify(user));
+            window.location.reload();
+          }
+        } else {
+          console.error("Sign-in failed:", response.data.error);
+        }
+      } catch (error: any) {
+        if (error.response) {
+          console.error("Server Error:", error.response.data.error || "An error occurred during registration.");
+        } else {
+          console.error("Error:", error.message || "An unexpected error occurred.");
+        }
+      }
+    }
+  };
+
+
+
+  return (
+    <Modal backdrop="blur" isOpen={isOpen} onOpenChange={onOpenChange} size="xl" className="bg-[#00555a]">
+      <ModalContent>
+        {(onClose) => (
+          <>
+            <ModalBody className="text-[#fbf2ed] px-10 py-7">
+              <div className="flex flex-col items-center gap-10">
+                <Image src="/images/W&E_Icon_WHT.png" alt="Icon" width={90} height={90} className="text-black" />
+                <h2 className="text-center sm:text-4xl lg:text-5xl font-jubilee">
+                  Sign in to access your Wealth & Equity roadmap
+                </h2>
+              </div>
+              <form onSubmit={handleSubmit} className="flex flex-col gap-6 mt-10">
+                <div>
+                  <label htmlFor="email" className="block text-lg">
+                    Email address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    value={email}
+                    placeholder="Enter your email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    className={`mt-1 h-12 block w-full rounded-md border ${errors.email ? 'border-red-500' : 'border-gray-300'
+                      } text-[#103438] bg-[#e0d9d4] focus:bg-[#ffffff] px-3 shadow-sm focus:outline-none focus:ring-[#fdff7f] focus:border-[#fdff7f] sm:text-sm md:text-lg`}
+                  />
+                  {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+                </div>
+                <div>
+                  <label htmlFor="password" className="block text-lg">
+                    Password
+                  </label>
+                  <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className={`mt-1 h-12 block w-full rounded-md border ${errors.password ? 'border-red-500' : 'border-gray-300'
+                      } text-[#103438] bg-[#e0d9d4] focus:bg-[#ffffff] px-3 shadow-sm focus:outline-none focus:ring-[#fdff7f] focus:border-[#fdff7f] sm:text-sm md:text-lg`}
+                  />
+                  {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
+                  <button className="text-[#fdff7f] text-sm mt-2">Forgot your password?</button>
+                </div>
+                <div className="mt-8 flex flex-col items-center gap-2">
+                  <Button type="submit" className="bg-[#fdff7f] w-[12rem] rounded-lg h-[3.5rem] text-md font-semibold">
+                    Sign In
+                  </Button>
+                  <span className="text-sm">
+                    Need an account?{' '}
+                    <button className="text-[#fdff7f] underline">Sign up here</button>
+                  </span>
+                </div>
+              </form>
+              <div className="flex justify-between w-full mt-4">
+                <button className="font-light text-sm" onClick={() => { /* Handle request assistance */ }}>
+                  Request assistance
+                </button>
+                <span className="text-sm">Powered by ALLVUE</span>
+              </div>
+            </ModalBody>
+          </>
+        )}
+      </ModalContent>
+    </Modal>
+  );
+};
+
+export default SignInModal;

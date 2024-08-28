@@ -6,20 +6,19 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const testimonials = [
   {
-    text: "“The strategic shift in my insurance provides peace of mind, knowing my financial decisions today are securing a prosperous future for my kids.”",
-    name: "Shawn S",
-    location: "Atlanta, GA",
+    text: "“Making the decision to purchase life insurance has given me peace of mind, knowing that the final decisions I've made today are a prosperous future for my children.”",
+    name: "Shawn S, 40",
+    location: "Wealth & Equity Customer",
     image: "images/Shawn.png",
     profile: "/images/Ellipse 11.png"
   },
   {
-    text: "This service has drastically improved my financial stability and given me confidence in my future investments.",
-    name: "Alex J",
-    location: "New York, NY",
-    image: "images/Shawn.png",
-    profile: "/images/Ellipse 11.png"
+    text: "“W&E helped me realize life insurance isn’t just about funeral costs—it's about ensuring my loved ones can thrive even if something happens to me.”",
+    name: "Arianne M, 36",
+    location: "Wealth & Equity Customer",
+    image: "images/Arianne.png",
+    profile: "/images/arriane_profile.png"
   },
-  // Add more testimonials as needed
 ];
 
 const ImageCarousel = () => {

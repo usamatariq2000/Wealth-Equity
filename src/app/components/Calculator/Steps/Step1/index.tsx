@@ -7,13 +7,14 @@ interface QuizStepProps {
   onChange1: (e: React.ChangeEvent<HTMLInputElement>) => void;
   answer2: string;
   onChange2: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  emailError: string
 }
 
 const content = {
-    header: "Welcome! Before we get started, what should we call you?",
+    header: "Welcome! We are excited to get you started.",
     description:"You have the option of receiving your personalized results via text or email."
   };
-const Step1: React.FC<QuizStepProps> = ({ answer1, onChange1, answer2, onChange2,  }) => (
+const Step1: React.FC<QuizStepProps> = ({ answer1, onChange1, answer2, onChange2, emailError }) => (
     
   <div>
     <div className="">
@@ -33,18 +34,21 @@ const Step1: React.FC<QuizStepProps> = ({ answer1, onChange1, answer2, onChange2
     <div className="mt-14 lg:mt-8 xl:mt-5 font-halyard">
     <input
       type="text"
-      placeholder='Your first name'
+      placeholder='Your name'
       value={answer1}
       onChange={onChange1}
       className="custom-input block w-full px-4 py-4 mb-6 text-[28px]  font-[500] text-black bg-transparent border-b-3 border-[#E0D9D4] focus:outline-none focus:border-darkgreen"
     />
-    <input
-      type="text"
-      placeholder='Your email address'
-      value={answer2}
-      onChange={onChange2}
-      className="custom-input block w-full px-4 py-4 mb-6 text-[28px]  font-[500] text-black bg-transparent border-b-3 border-[#E0D9D4] focus:outline-none focus:border-darkgreen"
-    />
+   <input
+  type="text"
+  placeholder="Your email address"
+  value={answer2}
+  onChange={onChange2}
+  className={`custom-input block w-full px-4 py-4 mb-2 text-[28px] font-[500] text-black bg-transparent border-b-3 ${
+    emailError ? "border-red-500" : "border-[#E0D9D4]"
+  } focus:outline-none focus:border-darkgreen`}
+/>
+{emailError && <p className="text-red-500 mt-1 text-sm">{emailError}</p>}
     </div>
   </div>
 );

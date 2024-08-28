@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto, Inter } from "next/font/google";
+import Head from "next/head"; // Import Head from next/head
 import "./globals.css";
 import Header from "./components/Header";
 import { Providers } from "./providers";
@@ -27,6 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+      </Head>
       <body className={inter.className}>
         <div className="bg-[#F9F1EC] h-full w-full">
           <Providers>
